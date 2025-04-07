@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Candle in the Dark Church Links</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Base Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e0e0; /* Neutral grey background */
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    /* Header with logo */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222;
+      padding: 10px 20px;
+    }
+    .menu_left-section {
+      display: flex;
+      align-items: center;
+    }
+    header img.logo {
+      height: 50px;
+      margin-right: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #fff;
+    }
+    /* Navigation Menu */
+    .menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100%;
+    }
+    .menu ul li {
+      margin-left: 20px;
+      height: 100%;
+    }
+   .menu ul li a {
+     text-decoration: none;
+     color: #fff;
+     font-size: 18px;
+     padding: 12px 8px;
+     border-radius: 4px;
+     transition: background-color 0.3s ease;
+     height: 100%;
+    }
+
+   /* Hover effect */
+   .menu ul li a:hover {
+     background: linear-gradient(to right, #7a5dd3, #fff5e6, #d1b84a);
+      color:black;
+      font-weight: bold;
+    }
+    /* Church Banner: displays the church motto */
+    .church-banner {
+      width: 100%;
+      height:850px;
+      background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg');
+      background-size: cover;
+      background-attachment:local;
+      overflow: auto;
+      background-position: center;
+      position: relative;
+      display: flex; /* Flexbox for layout */
+      justify-content: flex-start; /* Align items to the left */
+      align-items: flex-end; /* Align items to the bottom */
+      padding: 20px;
+    }
+    .bishopimg-container {
+      position: absolute; /* Allow the container to be positioned absolutely within the .church-banner */
+      bottom: 0; /* Position the container at the bottom */
+      right: 0; /* Position the container at the right */
+      width: auto; /* Allow the container to adjust based on the image */
+    }
+    .bishopimg {
+      width: 95%; /* Make the image responsive */
+      height: auto;
+      float:right;
+    }
+    
+    /* Main container with content overlay */
+    
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+    
+    .copyright {
+      padding: 10px;
+      background-color: #25262e;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    @media screen and (max-width: 850px){
+    .row.primary {
+      grid-template-columns: 1fr;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+      header img.logo {
+        height: 40px;
+      }
+      p, a, li {
+        font-size: 16px;
+      }
+      .church-banner {
+        height: 150px;
+      }
+      .theme-banner {
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu_left-section">
+      <img src='https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/logo.png' alt='Logo' class='logo'>
+      <h1>Candle in the Dark Church</h1>
+    </div>
+    <nav class="menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Dag_Heward-Mills" target="_blank">About Dag Heward-Mills</a></li>
+      <li><a href="#">Ministries</a></li>
+      <li><a href="https://udnews.org/" target="=_blank">News</a></li>
+      <li><a href="subfiles/contact.html" target="=_blank">Contact</a></li>
+    </ul>
+  </nav>
+  </header>
+  
+  <!-- Church Banner: About Us and Pastor Image -->
+  <div class='church-banner'>
+    <div>
+    <h2>Contact Us</h2>
+      <p>&nbsp;Via Wolfgang Amadeus Mozart, 39, 
+      <br>&nbsp;20093 Milano MI, Italy
+      <br>&nbsp;Email: candleinthedarkchurch@gmail.com
+      <br>&nbsp;Telephone: +39 389 159 0184
+      </p>
+    <h3>Our Church Location</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d742.294540177999!2d9.2859729!3d45.5398515!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786b811346eb4a5%3A0x608990aa942f347f!2sVia%20Wolfgang%20Amadeus%20Mozart%2C%2039%2C%2020093%20Milano%20MI%2C%20Italy!5e1!3m2!1sen!2spt!4v1743963190092!5m2!1sen!2spt" width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+    <div class="bishopimg-container">
+      <img src="/Volumes/Ministry/CIDC/images/Bishopimg3.png" alt="Image" class="bishopimg">
+    </div>
+  </div>
+  <div class='theme-banner'></div>
+  
+  <footer>
+<div class="row copyright">
+  
+   <p>&copy; 2025 Candle in the Dark Church. All rights reserved.</p>
+</div>
+    <!--<p>&copy; 2025 Candle in the Dark Church. All rights reserved.</p>-->
+  </footer>
+</body>
+</html>
