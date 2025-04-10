@@ -156,24 +156,25 @@
 
             if (contactForm && submitButton && confirmationMessage) {
                 submitButton.addEventListener('click', function(event) {
-                    // Prevent the default mailto: behavior immediately
-                    event.preventDefault();
+                    event.preventDefault(); // Prevent default form submission
 
-                    // Show the confirmation message
+                    // Display confirmation message
                     confirmationMessage.style.display = 'block';
 
-                    // Optionally, you can add a slight delay before opening the email client
-                    // to ensure the user sees the confirmation.
+                    // Construct the mailto link with form data
+                    let mailtoLink = "mailto:candleinthedarkchurch@gmail.com?subject=Website Contact Form";
+                    mailtoLink += "&body=" + encodeURIComponent(
+                        "Name: " + contactForm.name.value + "\n" +
+                        "Email: " + contactForm.email.value + "\n" +
+                        "Subject: " + contactForm.subject.value + "\n" +
+                        "Location: " + contactForm.location.value + "\n" +
+                        "Message:\n" + contactForm.message.value
+                    );
+
+                    // Open the email client after a short delay
                     setTimeout(function() {
-                        window.location.href = "mailto:candleinthedarkchurch@gmail.com?subject=Website Contact Form" +
-                            "&body=" + encodeURIComponent(
-                                "Name: " + contactForm.name.value + "\n" +
-                                "Email: " + contactForm.email.value + "\n" +
-                                "Subject: " + contactForm.subject.value + "\n" +
-                                "Location: " + contactForm.location.value + "\n" +
-                                "Message:\n" + contactForm.message.value
-                            );
-                    }, 500); // Adjust the delay (in milliseconds) as needed
+                        window.location.href = mailtoLink;
+                    }, 500); // 0.5 second delay
                 });
             }
         });
