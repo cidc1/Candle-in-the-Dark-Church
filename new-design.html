@@ -22,19 +22,22 @@
             align-items: center;
             background-color: #222;
             padding: 10px 20px;
+            flex-wrap: wrap; /* Added for better small screen behavior */
         }
         .menu_left-section {
             display: flex;
             align-items: center;
+            margin-right: auto; /* Push logo and title to the left */
+            flex-wrap: nowrap;
         }
         header img.logo {
             height: 50px;
             margin-right: 20px;
-            max-width: 100%; /* Add max-width for responsiveness */
+            max-width: 100%;  /* Ensure logo doesn't overflow */
         }
         header h1 {
             margin: 0;
-            font-size: 24px; /* Reduced font size for better fit on small screens */
+            font-size: 24px;
             color: #fff;
             white-space: nowrap; /* Prevent text wrapping */
         }
@@ -45,29 +48,28 @@
             padding: 0;
             display: flex;
             height: 100%;
-            flex-wrap: wrap; /* Add flex-wrap for small screens */
+            flex-wrap: wrap; /* Add wrap for small screens */
+            justify-content: center; /* Center menu items */
             gap: 10px; /* Add gap between menu items */
         }
         .menu ul li {
-            margin-left: 0; /* Remove left margin */
+            margin-left: 0;
             height: 100%;
-            display: flex; /* Vertically align items */
+            display: flex;
             align-items: center;
         }
         .menu ul li a {
             text-decoration: none;
             color: #fff;
-            font-size: 16px; /* Reduced font size */
+            font-size: 16px;
             padding: 10px 8px;
             border-radius: 4px;
             transition: background-color 0.3s ease;
             height: 100%;
-            display: flex; /* Vertically align link */
+            display: flex;
             align-items: center;
-            white-space: nowrap; /* Prevent text wrapping */
+            white-space: nowrap;
         }
-
-        /* Hover effect */
         .menu ul li a:hover {
             background: linear-gradient(to right, #7a5dd3, #fff5e6, #d1b84a);
             color: black;
@@ -76,7 +78,7 @@
         /* Church Banner: displays the church motto */
         .church-banner {
             width: 100%;
-            height: auto; /* Changed to auto */
+            height: auto;
             background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg');
             background-size: cover;
             background-position: center;
@@ -84,29 +86,29 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-end;
-            padding: 15px; /* Reduced padding */
-            min-height: 200px; /* Added min-height */
+            padding: 15px;
+            min-height: 200px;
         }
         .bishopimg-container1 {
             position: absolute;
             bottom: 0;
             right: 0;
             width: auto;
-            max-width: 50%; /* Ensure image doesn't overflow */
+            max-width: 50%;
         }
         .bishopimg1 {
-            width: 100%; /* Make image responsive */
+            width: 100%;
             height: auto;
             display: block;
         }
         /* Theme Banner: displays the theme for the year */
         .theme-banner {
             width: 100%;
-            height: auto; /* Changed to auto */
+            height: auto;
             background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/theme.png');
             background-size: cover;
             background-position: center;
-            min-height: 150px; /* Added min-height */
+            min-height: 150px;
         }
         /* Main container with content overlay */
         .container {
@@ -118,7 +120,7 @@
             border-radius: 4px;
         }
         p {
-            font-size: 16px; /* Reduced font size */
+            font-size: 16px;
             line-height: 1.6;
             margin-bottom: 10px;
         }
@@ -131,70 +133,10 @@
             background-attachment: fixed;
             min-height: 100vh;
         }
-        /* Container for the church branches */
-        .container1 {
-            position: relative; /* Changed to relative */
-            top: auto; /* Removed absolute positioning */
-            right: auto;
-            transform: none; /* Removed transform */
-            background-color: rgba(255, 255, 255, 0.55);
-            padding: 15px;
-            max-width: 900px;
-            width: 100%;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin-top: 20px; /* Added margin */
-        }
-        .branch-grid {
-            display: grid;
-            grid-template-columns: 1fr; /* Start with 1 column on small screens */
-            gap: 15px;
-            padding: 10px;
-        }
-        /* Style for each branch item */
-        .branch-item {
-            background: #f2f2f2;
-            padding: 10px;
-            border-radius: 6px;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .branch-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            background-color: #f9f9f9;
-        }
-        .branch-item h3 {
-            font-size: 16px; /* Reduced font size */
-            font-weight: bold;
-            margin: 0;
-            text-align: center;
-            color: dimgray;
-            white-space: nowrap;        /* added no wrap */
-            overflow: hidden;           /* added overflow hidden */
-            text-overflow: ellipsis;    /* added ellipsis */
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            color: #0077cc;
-            font-size: 16px; /* Reduced font size */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
         /* Footer Design*/
         footer {
             text-align: center;
-            font-size: 12px; /* Reduced font size */
+            font-size: 12px;
             padding: 20px;
             background-color: #222;
             color: #ccc;
@@ -209,12 +151,12 @@
         .row {
             padding: 1em 1em;
             display: flex;
-            flex-wrap: wrap; /* Added flex-wrap */
+            flex-wrap: wrap;
         }
         .row.primary {
             display: flex;
-            flex-wrap: wrap; /* Added flex-wrap to make it responsive */
-            justify-content: space-around; /* Added justify-content */
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
         .column {
             width: 100%;
@@ -228,12 +170,12 @@
             width: 100%;
             text-align: left;
             color: white;
-            font-size: 1.2em; /* Reduced font size */
+            font-size: 1.2em;
             white-space: nowrap;
         }
         .about p {
             text-align: justify;
-            line-height: 1.5; /* Reduced line height */
+            line-height: 1.5;
             margin: 0 0 1em 0;
             color: lightslategrey;
             font-size: 14px;
@@ -252,7 +194,7 @@
         .social a {
             text-decoration: none;
             margin: 0 0.5em;
-            font-size: 2em; /* Reduced font size */
+            font-size: 2em;
             color: white;
             justify-content: flex-start;
         }
@@ -274,32 +216,52 @@
             margin-top: 1em;
         }
         /* Responsive Styles */
-        @media (min-width: 600px) {
-            header h1{
-                font-size: 28px;
-            }
-            .menu ul li a{
-                font-size: 18px;
-            }
-            p{
-                font-size: 18px;
-            }
-            .branch-grid{
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .column{
-                width: 50%;
+        @media (max-width: 850px) {
+            .row.primary {
+                grid-template-columns: 1fr;
             }
         }
-        @media (min-width: 992px) {
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 22px;
+            }
+            header img.logo {
+                height: 40px;
+            }
+            p, a, li {
+                font-size: 16px;
+            }
+            .church-banner {
+                height: 150px;
+            }
+            .theme-banner {
+                height: 100px;
+            }
+            .menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .menu ul li {
+                margin: 5px 0;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .menu_left-section {
+                margin-bottom: 10px;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        @media (min-width: 601px) and (max-width: 992px) {
+            .branch-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 993px) {
             .branch-grid {
                 grid-template-columns: repeat(3, 1fr);
-            }
-            .row.primary {
-                flex-wrap: nowrap;
-            }
-            .column {
-                width: 25%;
             }
         }
     </style>
@@ -316,6 +278,7 @@
             <li><a href="https://en.wikipedia.org/wiki/Dag_Heward-Mills" target="_blank">About Dag Heward-Mills</a></li>
             <li><a href="https://www.daghewardmills.org/" target="=_blank">DHMM</a></li>
             <li><a href="https://udnews.org/" target="=_blank">News</a></li>
+            <li><a href="branches.html">Branches</a></li>
             <li><a href="subfiles\\contact.html" target="=_blank">Contact</a></li>
         </ul>
     </nav>
@@ -335,112 +298,7 @@
         </div>
     </div>
     <div class='theme-banner'></div>
-    <div class="background_bishoimg">
-    <div class='container1'>
-    <h2 align="center">Church Branches in Italy</h2>
-    <div class="branch-grid">
-        <div class="branch-item">
-            <h3>Alessandria</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Bergamo</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Bologna</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Bologna Centrale </h3>
-        </div>
-        <div class="branch-item">
-            <h3>Bologna - Savvena</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Brescia</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Como</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Empoli</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Firenze</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Genova</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Lodi</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Mantova</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Milan</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Milano-Famagosta</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Milan - Famagosta (Italiano)</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Modena</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Monza</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Mortara</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Napoli</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Novara</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Parma</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Piacenza</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Reggio Emilia</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Rome</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Rome - Guidona</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Rome - Piazza Venezia</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Sassuolo</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Torino</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Udine</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Verona</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Varese</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Vicenza</h3>
-        </div>
-        <div class="branch-item">
-            <h3>Voghera</h3>
-        </div>
-    </div>
-    </div>
-</div>
+    
     <footer>
     <div class="row primary">
         <div class="column about">
@@ -484,5 +342,72 @@
         <p>© 2025 Candle in the Dark Church. All rights reserved.</p>
 </div>
     </footer>
+    <script>
+
+
+    function adjustLayout() {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth < 600) {
+            headerH1.style.fontSize = '22px';
+            headerLogo.style.height = '40px';
+            elements.forEach(el => el.style.fontSize = '16px');
+            churchBanner.style.height = '150px';
+            themeBanner.style.height = '100px';
+            if (menu) {
+                menu.style.flexDirection = 'column';
+                menu.style.alignItems = 'center';
+            }
+            if (headerElement) {
+                headerElement.style.flexDirection = 'column';
+                headerElement.style.textAlign = 'center';
+            }
+            if (menuLeftSection) {
+                menuLeftSection.style.marginBottom = '10px';
+                menuLeftSection.style.flexDirection = 'column';
+                menuLeftSection.style.textAlign = 'center';
+            }
+        } else {
+            headerH1.style.fontSize = '';
+            headerLogo.style.height = '';
+            elements.forEach(el => el.style.fontSize = '');
+            churchBanner.style.height = '';
+            themeBanner.style.height = '';
+            if (menu) {
+                menu.style.flexDirection = '';
+                menu.style.alignItems = '';
+            }
+            if (headerElement) {
+                headerElement.style.flexDirection = '';
+                headerElement.style.textAlign = '';
+            }
+            if (menuLeftSection) {
+                menuLeftSection.style.marginBottom = '';
+                menuLeftSection.style.flexDirection = '';
+                menuLeftSection.style.textAlign = '';
+            }
+        }
+        if (screenWidth > 600 && screenWidth < 992) {
+            branchGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+        } else if (screenWidth > 992) {
+            branchGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+        } else {
+            branchGrid.style.gridTemplateColumns = '1fr';
+        }
+    }
+
+    const headerH1 = document.querySelector('header h1');
+    const headerLogo = document.querySelector('header img.logo');
+    const elements = document.querySelectorAll('p, a, li');
+    const churchBanner = document.querySelector('.church-banner');
+    const themeBanner = document.querySelector('.theme-banner');
+    const menu = document.querySelector('.menu ul');
+    const headerElement = document.querySelector('header');
+    const menuLeftSection = document.querySelector('.menu_left-section');
+
+
+    window.onload = adjustLayout;
+    window.onresize = adjustLayout;
+</script>
 </body>
 </html>
