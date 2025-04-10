@@ -11,46 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Segoe+UI:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .country-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px auto;
-            text-align: center;
-        }
-
-        .country-list li {
-            display: inline-block;
-            margin: 10px;
-            cursor: pointer;
-            padding: 8px 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .country-list li:hover {
-            background-color: #f0f0f0;
-        }
-
-        .branch-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .branch-item {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
 </head>
 
 <body>
@@ -76,153 +36,128 @@
     <div class="page-content-area">
         <div class="page-content-container">
             <h2 align="center">Our Church Branches</h2>
-
-            <ul class="country-list">
-                <li data-country="italy">Italy</li>
-                <li data-country="spain">Spain</li>
-                <li data-country="germany">Germany</li>
-                <li data-country="france">France</li>
-                <li data-country="hungary">Hungary</li>
-            </ul>
-
-            <div id="branches-container">
-                <div id="italy-branches" class="branch-grid">
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/XxhGiHSMGQPA1P3v6" target="_blank">Alessandria</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/5h7rwnp4NPgtdKLm6" target="_blank">Bergamo</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/JixCLYuJEFQyCPuM6" target="_blank">Bologna</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/watszwJkE24NoTGL8" target="_blank">Bologna Centrale</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/TZCLuw9HDqvSgxFe9" target="_blank">Bologna Savvena</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/5zbVTKoshLbUWpEt7" target="_blank">Brescia</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/hpSjCoMxTj2rgV6a9" target="_blank">Como</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/SPWHM6A1eTvJy4ak6" target="_blank">Empoli</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/7ExVV6tAoS9tv4Xr9" target="_blank">Firenze</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3>Genova</h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/4VwiLGKWuTNBKeti9" target="_blank">Lodi</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/DBz8PPdEr8mWj4YA9" target="_blank">Mantova</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/h5ZKu8Y9XujZXkL7A" target="_blank">Milano</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/XEwG2FgcF48kknP67" target="_blank">Milan0-Famagosta</a></h3>
-                    </div>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/QUJceR9pNm15vDHW6" target="_blank">Modena</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/z3g4Vx7fPANhdbFR8" target="_blank">Monza</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/wMVrxbmDNJRdFCLa9" target="_blank">Mortara</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/UtxTnySK6ajqKdxVA" target="_blank">Napoli</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3>Novara</h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/WWjsaS4hQAw4Lucp6" target="_blank">Parma</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/zcX2hLxiWstfqaRdA" target="_blank">Piacenza</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3>Reggio Emilia</h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/NDiRhp6DzczKqKe69" target="_blank">Rome</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/xCuHk8rWYGxMRvcLA" target="_blank">Rome-Guidona</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/Bq1qJ8GEgnQF18g4A" target="_blank">Rome-Piazza Venezia</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/wEERSM7uSpRbf7ns9" target="_blank">Sassuolo</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3>Torino</h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3>Udine</h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/f2yXi3UJUe2Cgc9X7" target="_blank">Verona</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/dNAXq6ht7a29sgVGA" target="_blank">Varese</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/kskCBtS3GErBjJBg9" target="_blank">Vicenza</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.app.goo.gl/N6ttmwFkejfYMKe19" target="_blank">Voghera</a></h3>
-                    </div>
+            <div class="branch-grid">
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/XxhGiHSMGQPA1P3v6" target="_blank">Alessandria</a></h3>
                 </div>
-
-                <div id="spain-branches" class="branch-grid hidden">
-                    <div class="branch-item">
-                        <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Madrid</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Barcelona</a></h3>
-                    </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/5h7rwnp4NPgtdKLm6" target="_blank">Bergamo</a></h3>
                 </div>
-
-                <div id="germany-branches" class="branch-grid hidden">
-                    <div class="branch-item">
-                        <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Berlin</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Hamburg</a></h3>
-                    </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/JixCLYuJEFQyCPuM6" target="_blank">Bologna</a></h3>
                 </div>
-
-                <div id="france-branches" class="branch-grid hidden">
-                    <div class="branch-item">
-                        <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Paris</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Lyon</a></h3>
-                    </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/watszwJkE24NoTGL8" target="_blank">Bologna Centrale</a></h3>
                 </div>
-
-                <div id="hungary-branches" class="branch-grid hidden">
-                    <div class="branch-item">
-                        <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Budapest</a></h3>
-                    </div>
-                    <div class="branch-item">
-                        <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Debrecen</a></h3>
-                    </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/TZCLuw9HDqvSgxFe9" target="_blank">Bologna Savvena</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/5zbVTKoshLbUWpEt7" target="_blank">Brescia</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/hpSjCoMxTj2rgV6a9" target="_blank">Como</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/SPWHM6A1eTvJy4ak6" target="_blank">Empoli</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/7ExVV6tAoS9tv4Xr9" target="_blank">Firenze</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Genova</h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/4VwiLGKWuTNBKeti9" target="_blank">Lodi</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/DBz8PPdEr8mWj4YA9" target="_blank">Mantova</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/h5ZKu8Y9XujZXkL7A" target="_blank">Milano</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/XEwG2FgcF48kknP67" target="_blank">Milan0-Famagosta</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/QUJceR9pNm15vDHW6" target="_blank">Modena</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/z3g4Vx7fPANhdbFR8" target="_blank">Monza</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/wMVrxbmDNJRdFCLa9" target="_blank">Mortara</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/UtxTnySK6ajqKdxVA" target="_blank">Napoli</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Novara</h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/WWjsaS4hQAw4Lucp6" target="_blank">Parma</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/zcX2hLxiWstfqaRdA" target="_blank">Piacenza</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Reggio Emilia</h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/NDiRhp6DzczKqKe69" target="_blank">Rome</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/xCuHk8rWYGxMRvcLA" target="_blank">Rome-Guidona</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/Bq1qJ8GEgnQF18g4A" target="_blank">Rome-Piazza Venezia</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/wEERSM7uSpRbf7ns9" target="_blank">Sassuolo</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Torino</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Udine</h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/f2yXi3UJUe2Cgc9X7" target="_blank">Verona</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/dNAXq6ht7a29sgVGA" target="_blank">Varese</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/kskCBtS3GErBjJBg9" target="_blank">Vicenza</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.app.goo.gl/N6ttmwFkejfYMKe19" target="_blank">Voghera</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Madrid</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Barcelona</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Berlin</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Hamburg</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Paris</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Lyon</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Budapest</a></h3>
+                </div>
+                <div class="branch-item">
+                    <h3><a href="https://maps.google.com/?cid=14888484849147481484" target="_blank">Debrecen</a></h3>
                 </div>
             </div>
-
         </div>
     </div>
     <footer>
@@ -276,31 +211,6 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        const countryList = document.querySelector('.country-list');
-        const branchContainers = document.querySelectorAll('.branch-grid');
-
-        countryList.addEventListener('click', (event) => {
-            if (event.target.tagName === 'LI') {
-                const selectedCountry = event.target.dataset.country;
-
-                // Hide all branch containers
-                branchContainers.forEach(container => {
-                    container.classList.add('hidden');
-                });
-
-                // Show the selected country's branches
-                const selectedContainer = document.getElementById(`${selectedCountry}-branches`);
-                if (selectedContainer) {
-                    selectedContainer.classList.remove('hidden');
-                }
-            }
-        });
-
-        // Show Italy by default
-        document.getElementById('italy-branches').classList.remove('hidden');
-    </script>
 </body>
 
 </html>
