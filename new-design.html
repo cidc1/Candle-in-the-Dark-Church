@@ -6,10 +6,11 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Candle in the Dark Church Links</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #e0e0e0;
             color: #333;
             margin: 0;
@@ -33,12 +34,14 @@
         header img.logo {
             height: 50px;
             margin-right: 20px;
+            max-width: 100%; /* Ensure logo doesn't overflow on small screens */
         }
 
         header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 24px; /* Slightly smaller heading for better mobile fit */
             color: #fff;
+            white-space: nowrap; /* Prevent text wrapping on small screens */
         }
 
         .menu ul {
@@ -50,18 +53,23 @@
         }
 
         .menu ul li {
-            margin-left: 20px;
+            margin-left: 10px; /* Reduced left margin on nav items */
             height: 100%;
+            display: flex; /* Vertically align link within the li */
+            align-items: center;
         }
 
         .menu ul li a {
             text-decoration: none;
             color: #fff;
-            font-size: 18px;
-            padding: 12px 8px;
+            font-size: 16px; /* Reduced font size for nav links */
+            padding: 10px 8px;
             border-radius: 4px;
             transition: background-color 0.3s ease;
             height: 100%;
+            display: flex; /* Ensure link takes full height of li */
+            align-items: center;
+            white-space: nowrap;  /* Prevent text wrapping */
         }
 
         .menu ul li a:hover {
@@ -72,17 +80,16 @@
 
         .church-banner {
             width: 100%;
-            height: 850px;
+            height: auto; /* Changed to auto */
             background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg');
             background-size: cover;
-            background-attachment: local;
-            overflow: auto;
             background-position: center;
             position: relative;
             display: flex;
             justify-content: flex-start;
             align-items: flex-end;
-            padding: 20px;
+            padding: 15px; /* Reduced padding */
+            min-height: 200px; /* Add a minimum height */
         }
 
         .bishopimg-container1 {
@@ -90,36 +97,37 @@
             bottom: 0;
             right: 0;
             width: auto;
+            max-width: 50%; /* Ensure image doesn't overflow on small screens */
         }
 
         .bishopimg1 {
-            width: 52%;
+            width: 100%; /* Make image responsive within its container */
             height: auto;
-            float: right;
+            display: block; /*removes extra space below image*/
         }
 
         .theme-banner {
             width: 100%;
-            height: 600px;
+            height: auto; /* Changed to auto */
             background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/theme.png');
             background-size: cover;
-            background-attachment: fixed;
             background-position: center;
+            min-height: 150px; /* Added min height */
         }
 
         .container {
-            padding: 20px;
+            padding: 15px;
             background-color: rgba(255, 255, 255, 0.95);
-            margin: 20px;
+            margin: 15px;
             max-width: 850px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
             border-radius: 4px;
         }
 
         p {
-            font-size: 18px;
+            font-size: 16px; /* Reduced font size */
             line-height: 1.6;
-            margin-bottom: 8px;
+            margin-bottom: 10px; /* Reduced margin */
         }
 
         .background_bishoimg {
@@ -128,15 +136,14 @@
             background-image: url('images\\Bishopimg5.jpg');
             background-size: cover;
             background-position: center center;
-            background-attachment: fixed;
             min-height: 100vh;
         }
 
         .container1 {
-            position: absolute;
-            top: 50%;
-            right: 0.5%;
-            transform: translateY(-50%);
+            position: relative; /* Changed to relative */
+            top: auto;
+            right: auto;
+            transform: none;
             background-color: rgba(255, 255, 255, 0.55);
             padding: 15px;
             max-width: 900px;
@@ -144,13 +151,14 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
             border-radius: 4px;
             box-sizing: border-box;
+            margin-top: 20px; /* Added margin top */
         }
 
         .branch-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 20px;
+            grid-template-columns: 1fr; /* Start with one column for small screens */
+            gap: 15px; /* Reduced gap */
+            padding: 10px; /* Reduced padding */
         }
 
         .branch-item {
@@ -169,11 +177,14 @@
         }
 
         .branch-item h3 {
-            font-size: 18px;
+            font-size: 16px; /* Reduced font size */
             font-weight: bold;
             margin: 0;
             text-align: center;
             color: dimgray;
+            white-space: nowrap; /* added no wrap */
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         ul {
@@ -187,7 +198,7 @@
 
         a {
             color: #0077cc;
-            font-size: 18px;
+            font-size: 16px; /* Reduced font size */
             text-decoration: none;
         }
 
@@ -197,7 +208,7 @@
 
         footer {
             text-align: center;
-            font-size: 14px;
+            font-size: 12px; /* Reduced font size */
             padding: 20px;
             background-color: #222;
             color: #ccc;
@@ -213,52 +224,55 @@
 
         .row {
             padding: 1em 1em;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .row.primary {
-            display: grid;
-            grid-template-columns: 2fr 2fr 2fr 2fr;
-            align-items: stretch;
+            justify-content: space-around;
         }
 
         .column {
             width: 100%;
             display: flex;
             flex-direction: column;
-            padding: 0 2em;
-            min-height: 15em;
+            padding: 0 1em;
+            min-height: 10em;
+            box-sizing: border-box;
         }
 
         h3 {
             width: 100%;
             text-align: left;
             color: white;
-            font-size: 1.4em;
+            font-size: 1.2em; /* Reduced font size */
             white-space: nowrap;
         }
 
         .about p {
             text-align: justify;
-            line-height: 2;
-            margin: 0;
+            line-height: 1.5; /* Reduced line height */
+            margin: 0 0 1em 0;
             color: lightslategrey;
+            font-size: 14px;
         }
 
         button {
-            font-size: 1.0em;
-            padding: 1em;
+            font-size: 1em;
+            padding: 0.75em;
             width: 100%;
             border-radius: 5px;
-            margin-bottom: 5px;
+            margin-bottom: 0.5em;
             background: linear-gradient(to right, #7a5dd3, #fff5e6, #d1b84a);
             color: black;
             font-weight: bold;
+            border: none;
         }
 
         .social a {
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 50px;
+            margin: 0 0.5em;
+            font-size: 2em; /* Reduced font size */
             color: white;
             justify-content: flex-start;
         }
@@ -270,113 +284,53 @@
         .contact p {
             text-align: left;
             color: antiquewhite;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
         .copyright {
             padding: 10px;
             background-color: #25262e;
             text-align: center;
-            font-size: 14px;
+            font-size: 12px;
             color: #ccc;
-            margin-top: 10px;
+            margin-top: 1em;
         }
 
         /* Responsive Styles */
-        @media (max-width: 600px) {
+        @media (min-width: 600px) {
             header h1 {
-                font-size: 22px;
+                font-size: 28px;
             }
 
-            header img.logo {
-                height: 40px;
+            .menu ul li a {
+                font-size: 18px;
             }
 
-            p,
-            a,
-            li {
-                font-size: 16px;
-            }
-
-            .church-banner {
-                height: 150px;
-            }
-
-            .theme-banner {
-                height: 100px;
-            }
-        }
-
-        /* iPhone Specific Styles */
-        @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-            /* iPhone 6/7/8 */
-            header h1 {
-                font-size: 20px;
-            }
-
-            .church-banner {
-                height: 200px;
-            }
-
-            .container {
-                padding: 15px;
+            p {
+                font-size: 18px;
             }
 
             .branch-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .column {
+                width: 50%;
             }
         }
 
-        @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-min-device-pixel-ratio: 3) {
-            /* iPhone 6/7/8 Plus */
-            header h1 {
-                font-size: 24px;
+        @media (min-width: 992px) {
+            .branch-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
 
-            .church-banner {
-                height: 250px;
-            }
-        }
-
-        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-min-device-pixel-ratio: 3) {
-            /* iPhone X/XS/11 Pro */
-            header h1 {
-                font-size: 20px;
+            .row.primary {
+                flex-wrap: nowrap;
             }
 
-            .church-banner {
-                height: 200px;
-            }
-        }
-
-        @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-min-device-pixel-ratio: 2) {
-            /* iPhone XR/11 */
-            header h1 {
-                font-size: 24px;
-            }
-
-            .church-banner {
-                height: 250px;
-            }
-        }
-
-        @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-min-device-pixel-ratio: 3) {
-            /* iPhone 12/12 Pro/13/13 Pro/14 */
-              header h1 {
-                font-size: 20px;
-            }
-
-            .church-banner {
-                height: 200px;
-            }
-        }
-        @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-min-device-pixel-ratio: 3) {
-            /* iPhone 12 Pro Max/13 Pro Max */
-             header h1 {
-                font-size: 24px;
-            }
-
-            .church-banner {
-                height: 250px;
+            .column {
+                width: 25%;
             }
         }
     </style>
@@ -385,28 +339,34 @@
             const screenWidth = window.innerWidth;
 
             if (screenWidth < 600) {
-                document.querySelector('header h1').style.fontSize = '22px';
+                document.querySelector('header h1').style.fontSize = '24px';
                 document.querySelector('header img.logo').style.height = '40px';
                 document.querySelectorAll('p, a, li').forEach(el => el.style.fontSize = '16px');
-                document.querySelector('.church-banner').style.height = '150px';
-                document.querySelector('.theme-banner').style.height = '100px';
+                document.querySelector('.church-banner').style.minHeight = '200px';
+                document.querySelector('.theme-banner').style.minHeight = '100px';
 
                 const branchGrid = document.querySelector('.branch-grid');
                 if (branchGrid) {
                     branchGrid.style.gridTemplateColumns = '1fr';
                 }
-            } else if (screenWidth < 850) {
+            } else if (screenWidth < 992) {
+                document.querySelector('header h1').style.fontSize = '26px';
+                document.querySelector('header img.logo').style.height = '45px';
+                document.querySelectorAll('p, a, li').forEach(el => el.style.fontSize = '18px');
+                document.querySelector('.church-banner').style.minHeight = '250px';
+                document.querySelector('.theme-banner').style.minHeight = '120px';
                 const branchGrid = document.querySelector('.branch-grid');
                 if (branchGrid) {
                     branchGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
                 }
-            } else {
+            }
+
+            else {
                 document.querySelector('header h1').style.fontSize = '28px';
                 document.querySelector('header img.logo').style.height = '50px';
                 document.querySelectorAll('p, a, li').forEach(el => el.style.fontSize = '18px');
-                document.querySelector('.church-banner').style.height = '850px';
-                document.querySelector('.theme-banner').style.height = '600px';
-
+                document.querySelector('.church-banner').style.minHeight = '300px';
+                document.querySelector('.theme-banner').style.minHeight = '150px';
                 const branchGrid = document.querySelector('.branch-grid');
                 if (branchGrid) {
                     branchGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
@@ -433,7 +393,7 @@
                         Heward-Mills</a></li>
                 <li><a href="https://www.daghewardmills.org/" target="=_blank">DHMM</a></li>
                 <li><a href="https://udnews.org/" target="=_blank">News</a></li>
-                <li><a href="subfiles\\contact.html" target="_blank">Contact</a></li>
+                <li><a href="subfiles\\contact.html" target="=_blank">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -596,7 +556,7 @@
                 <h3>Our Church Location</h3>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d742.294540177999!2d9.2859729!3d45.5398515!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786b811346eb4a5%3A0x608990aa942f347f!2sVia%20Wolfgang%20Amadeus%20Mozart%2C%2039%2C%2020093%20Milano%20MI%2C%20Italy!5e1!3m2!1sen!2spt!4v1743963190092!5m2!1sen!2spt"
-                    width="300"
+                    width="100%"
                     height="200"
                     style="border:0;"
                     allowfullscreen=""
@@ -616,6 +576,49 @@
             <p>© 2025 Candle in the Dark Church. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        function adjustLayout() {
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth < 600) {
+                document.querySelector('header h1').style.fontSize = '24px';
+                document.querySelector('header img.logo').style.height = '40px';
+                document.querySelectorAll('p, a, li').forEach(el => el.style.fontSize = '16px');
+                document.querySelector('.church-banner').style.minHeight = '200px';
+                document.querySelector('.theme-banner').style.minHeight = '150px';
+
+                const branchGrid = document.querySelector('.branch-grid');
+                if (branchGrid) {
+                    branchGrid.style.gridTemplateColumns = '1fr';
+                }
+            } else if (screenWidth < 992) {
+                document.querySelector('header h1').style.fontSize = '26px';
+                document.querySelector('header img.logo').style.height = '45px';
+                document.querySelectorAll('p, a, li').forEach(el => el.style.fontSize = '18px');
+                document.querySelector('.church-banner').style.minHeight = '250px';
+                document.querySelector('.theme-banner').style.minHeight = '120px';
+                const branchGrid = document.querySelector('.branch-grid');
+                if (branchGrid) {
+                    branchGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                }
+            }
+
+            else {
+                document.querySelector('header h1').style.fontSize = '28px';
+                document.querySelector('header img.logo').style.height = '50px';
+                document.querySelectorAll('p, a, li').forEach(el => el.style.fontSize = '18px');
+                document.querySelector('.church-banner').style.minHeight = '300px';
+                document.querySelector('.theme-banner').style.minHeight = '150px';
+                const branchGrid = document.querySelector('.branch-grid');
+                if (branchGrid) {
+                    branchGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                }
+            }
+        }
+
+        window.onload = adjustLayout;
+        window.onresize = adjustLayout;
+    </script>
 </body>
 
 </html>
