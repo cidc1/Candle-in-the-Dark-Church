@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -22,24 +23,24 @@
             align-items: center;
             background-color: #222;
             padding: 10px 20px;
-            flex-wrap: wrap; /* Added for better small screen behavior */
+            flex-wrap: wrap;
         }
         .menu_left-section {
             display: flex;
             align-items: center;
-            margin-right: auto; /* Push logo and title to the left */
+            margin-right: auto;
             flex-wrap: nowrap;
         }
         header img.logo {
             height: 50px;
             margin-right: 20px;
-            max-width: 100%;  /* Ensure logo doesn't overflow */
+            max-width: 100%;
         }
         header h1 {
             margin: 0;
             font-size: 24px;
             color: #fff;
-            white-space: nowrap; /* Prevent text wrapping */
+            white-space: nowrap;
         }
         /* Navigation Menu */
         .menu ul {
@@ -48,9 +49,9 @@
             padding: 0;
             display: flex;
             height: 100%;
-            flex-wrap: wrap; /* Add wrap for small screens */
-            justify-content: center; /* Center menu items */
-            gap: 10px; /* Add gap between menu items */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
         .menu ul li {
             margin-left: 0;
@@ -152,6 +153,7 @@
             padding: 1em 1em;
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-around;
         }
         .row.primary {
             display: flex;
@@ -279,7 +281,7 @@
             <li><a href="https://www.daghewardmills.org/" target="=_blank">DHMM</a></li>
             <li><a href="https://udnews.org/" target="=_blank">News</a></li>
             <li><a href="branches.html">Branches</a></li>
-            <li><a href="subfiles\\contact.html" target="=_blank">Contact</a></li>
+            <li><a href="subfiles/contact.html">Contact</a></li>
         </ul>
     </nav>
     </header>
@@ -294,7 +296,7 @@
         </p>
     </div>
         <div class="bishopimg-container1">
-            <img src="images\\Bishopimg2a.png" alt="bishopimage" class="bishopimg1">
+            <img src="images/Bishopimg2a.png" alt="bishopimage" class="bishopimg1">
         </div>
     </div>
     <div class='theme-banner'></div>
@@ -386,13 +388,6 @@
                 menuLeftSection.style.flexDirection = '';
                 menuLeftSection.style.textAlign = '';
             }
-        }
-        if (screenWidth > 600 && screenWidth < 992) {
-            branchGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
-        } else if (screenWidth > 992) {
-            branchGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
-        } else {
-            branchGrid.style.gridTemplateColumns = '1fr';
         }
     }
 
