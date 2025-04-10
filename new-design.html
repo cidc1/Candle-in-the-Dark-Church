@@ -281,12 +281,6 @@
             margin-top: 10px;
         }
 
-        @media screen and (max-width: 850px) {
-            .row.primary {
-                grid-template-columns: 1fr;
-            }
-        }
-
         /* Responsive Styles */
         @media (max-width: 600px) {
             header h1 {
@@ -309,6 +303,80 @@
 
             .theme-banner {
                 height: 100px;
+            }
+        }
+
+        /* iPhone Specific Styles */
+        @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+            /* iPhone 6/7/8 */
+            header h1 {
+                font-size: 20px;
+            }
+
+            .church-banner {
+                height: 200px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .branch-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+            /* iPhone 6/7/8 Plus */
+            header h1 {
+                font-size: 24px;
+            }
+
+            .church-banner {
+                height: 250px;
+            }
+        }
+
+        @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+            /* iPhone X/XS/11 Pro */
+            header h1 {
+                font-size: 20px;
+            }
+
+            .church-banner {
+                height: 200px;
+            }
+        }
+
+        @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-min-device-pixel-ratio: 2) {
+            /* iPhone XR/11 */
+            header h1 {
+                font-size: 24px;
+            }
+
+            .church-banner {
+                height: 250px;
+            }
+        }
+
+        @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-min-device-pixel-ratio: 3) {
+            /* iPhone 12/12 Pro/13/13 Pro/14 */
+              header h1 {
+                font-size: 20px;
+            }
+
+            .church-banner {
+                height: 200px;
+            }
+        }
+        @media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-min-device-pixel-ratio: 3) {
+            /* iPhone 12 Pro Max/13 Pro Max */
+             header h1 {
+                font-size: 24px;
+            }
+
+            .church-banner {
+                height: 250px;
             }
         }
     </style>
@@ -365,7 +433,7 @@
                         Heward-Mills</a></li>
                 <li><a href="https://www.daghewardmills.org/" target="=_blank">DHMM</a></li>
                 <li><a href="https://udnews.org/" target="=_blank">News</a></li>
-                <li><a href="subfiles\\contact.html" target="=_blank">Contact</a></li>
+                <li><a href="subfiles\\contact.html" target="_blank">Contact</a></li>
             </ul>
         </nav>
     </header>
