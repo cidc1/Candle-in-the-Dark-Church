@@ -91,41 +91,48 @@
      </div>
   </footer>
 
-  <script>
+<script>
     const bishopImageElement = document.getElementById('bishopSlideshowImage');
     const bishopImages = [
-      'images/Bishopimg2a.png', // Bishop Dag1
-      'images/Bishopimg3.png', // Bishop Dag2
-      'images/Bishopimg4.png', // Example: Event photo
-      'images/Bishopimg5.png'  // Example: Congregation photo1
-      'images/Bishopimg6.jpg'  // Example: Congregation photo2
-      'images/Bishopimg7.png'  // Example: Congregation photo3
-      'images/Bishopimg8.jpg'  // Example: Congregation photo4
-      'images/Bishopimg9.jpg'  // Example: Congregation photo5
-      'images/Bishopimg10.jpg'  // Example: Congregation photo6
-      'images/Bishopimg5.png'  // Example: Congregation photo7
-      'images/Bishopimg5.png'  // Example: Congregation photo8
+        'images/Bishopimg2a.png', // Bishop Dag1
+        'images/Bishopimg3.png', // Bishop Dag2
+        'images/Bishopimg4.png', // Example: Event photo
+        'images/Bishopimg5.png', // Example: Congregation photo1 (Removed extra space)
+        'images/Bishopimg6.jpg',
+        'images/Bishopimg7.png',
+        'images/Bishopimg8.jpg',
+        'images/Bishopimg9.jpg',
+        'images/Bishopimg10.jpg',
+        'images/Bishopimg5.png',
+        'images/Bishopimg5.png'
     ];
     const bishopAltTexts = [
-      'Bishop Immanuel Obeng leading the Candle in the Dark Church',
-      'Evangelist Dag Heward-Mills speaking', // More specific alt text
-      'Candle in the Dark Church special event', // Update with actual description
-      'Candle in the Dark Church worship service' // Update with actual description
+        'Bishop Immanuel Obeng leading the Candle in the Dark Church',
+        'Evangelist Dag Heward-Mills speaking', // More specific alt text
+        'Candle in the Dark Church special event', // Update with actual description
+        'Candle in the Dark Church worship service', // Update with actual description
+        'Candle in the Dark Church congregation', // Add description for bishopimg6.jpg
+        'Candle in the Dark Church gathering',    // Add description for bishopimg7.png
+        'Candle in the Dark Church members',     // Add description for bishopimg8.jpg
+        'Candle in the Dark Church meeting',     // Add description for bishopimg9.jpg
+        'Candle in the Dark Church service',     // Add description for bishopimg10.jpg
+        'Candle in the Dark Church attendees',   // Add description for the extra bishopimg5.png
+        'Candle in the Dark Church community'    // Add description for the last bishopimg5.png
     ];
 
     let currentImageIndex = 0;
 
     function changeBishopImage() {
-      currentImageIndex = (currentImageIndex + 1) % bishopImages.length; // Loop
-      if (bishopImageElement) {
-          bishopImageElement.style.opacity = 0; // Start fade out
-          // Use setTimeout to change src after fade-out starts
-          setTimeout(() => {
-              bishopImageElement.src = bishopImages[currentImageIndex];
-              bishopImageElement.alt = bishopAltTexts[currentImageIndex]; // Update alt text
-              bishopImageElement.style.opacity = 1; // Fade in new image
-          }, 500); // This duration should match the CSS transition duration
-      }
+        currentImageIndex = (currentImageIndex + 1) % bishopImages.length; // Loop
+        if (bishopImageElement) {
+            bishopImageElement.style.opacity = 0; // Start fade out
+            // Use setTimeout to change src after fade-out starts
+            setTimeout(() => {
+                bishopImageElement.src = bishopImages[currentImageIndex];
+                bishopImageElement.alt = bishopAltTexts[currentImageIndex]; // Update alt text
+                bishopImageElement.style.opacity = 1; // Fade in new image
+            }, 500); // This duration should match the CSS transition duration
+        }
     }
 
     // Ensure the image element exists before setting interval
@@ -136,7 +143,7 @@
         // If only one image, ensure opacity is 1
         bishopImageElement.style.opacity = 1;
     }
-  </script>
+</script>
 
 </body>
 </html>
