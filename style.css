@@ -1,36 +1,42 @@
-/* Base Styles (Copied from your original <style> block) */
+/* Base Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #e0e0e0; /* Neutral grey background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+  background-color: #f0f0f0; /* Slightly lighter grey */
   color: #333;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  font-size: 16px; /* Base font size */
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6; /* Default line height */
 }
 
-/* Header with logo */
+/* --- Header --- */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* Allow wrapping */
   background-color: #222;
-  padding: 10px 20px;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
+  padding: 10px 30px; /* Increased horizontal padding */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky; /* Make header sticky */
+  top: 0;
+  z-index: 1000; /* Ensure header stays on top */
 }
 .menu_left-section {
   display: flex;
   align-items: center;
-  margin-bottom: 10px; /* Add space when wrapping */
+  margin-bottom: 5px; /* Space when wrapping */
 }
 header img.logo {
   height: 50px;
-  margin-right: 15px; /* Slightly reduced margin */
+  margin-right: 15px;
 }
 header h1 {
   margin: 0;
-  font-size: 1.75rem; /* Use rem for scalable fonts */
+  font-size: 1.7rem; /* Responsive font size */
   color: #fff;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -41,457 +47,185 @@ header h1 {
   padding: 0;
   display: flex;
   flex-wrap: wrap; /* Allow menu items to wrap */
-  height: 100%;
+  align-items: center; /* Vertically align items */
   justify-content: center; /* Center items when wrapping */
 }
 .menu ul li {
-  margin-left: 10px; /* Reduced margin */
-  margin-bottom: 5px; /* Space when wrapping */
-  height: 100%;
+  margin-left: 15px; /* Slightly more space */
+  margin-bottom: 5px; /* Space for wrapped items */
 }
 .menu ul li a {
   text-decoration: none;
   color: #fff;
-  font-size: 1rem; /* Use rem */
-  padding: 10px 8px; /* Adjusted padding */
+  font-size: 1rem;
+  padding: 10px 12px; /* More padding */
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  display: inline-block; /* Ensure padding works correctly */
-  height: auto; /* Remove fixed height */
-  line-height: 1.4; /* Adjust line height */
+  display: inline-block;
+  line-height: 1.4;
+  font-weight: 500;
 }
-/* Hover effect */
-.menu ul li a:hover {
-  background: linear-gradient(to right, #7a5dd3, #fff5e6, #d1b84a);
-  color: black;
-  font-weight: bold;
+.menu ul li a:hover, .menu ul li a.active { /* Style for active page */
+  background: linear-gradient(to right, #7a5dd3, #a891e1, #d1b84a);
+  color: #111; /* Darker text on hover */
+  font-weight: 600;
 }
 
-/* --- Banners --- */
+/* --- Hero Banner (Church Banner) --- */
 .church-banner {
   width: 100%;
-  min-height: 500px; /* Use min-height instead of fixed height */
-  height: auto; /* Allow height to adjust */
-  background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg');
+  height: 80vh; /* Use viewport height, minimum 600px */
+  min-height: 600px;
+  max-height: 850px; /* Limit max height */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg'); /* Added subtle overlay */
   background-size: cover;
-  background-attachment: scroll; /* Changed from fixed for better mobile performance */
   background-position: center center;
-  position: relative;
+  position: relative; /* Needed for absolute positioning of children */
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-  padding: 20px;
+  /* *** REQUIREMENT 3 FIX: Align items to bottom-left as per original *** */
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 30px; /* Base padding */
   box-sizing: border-box;
+  color: #fff; /* Default text color for banner content */
 }
 
+/* Container within the banner (for About Us text) */
+.church-banner .container {
+  /* Overrides general .container styles */
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for text readability */
+  margin: 0; /* Reset margin */
+  max-width: 50%; /* Limit width relative to banner */
+  width: auto; /* Let content determine width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  color: #f0f0f0; /* Light text color */
+  position: relative; /* Keep in flow */
+  z-index: 2; /* Above banner background */
+}
+.church-banner .container h2 {
+  color: #fff; /* White heading */
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: left;
+}
+.church-banner .container p {
+  color: #e0e0e0; /* Slightly off-white paragraph */
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  text-align: left; /* Justify looked cramped */
+}
+.church-banner .container span { /* Style for the scripture */
+    color: #ffd700; /* Golden color */
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/* Bishop Image Container */
 .bishopimg-container1 {
-    /* Removed absolute positioning for better flow */
-    width: 100%;
-    max-width: 450px; /* Control max size */
-    text-align: center; /* Center the image container */
-    margin-top: 20px; /* Add space above */
+  /* *** REQUIREMENT 2 FIX: Restore absolute positioning *** */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 48%; /* Adjusted width */
+  max-width: 550px; /* Max size */
+  z-index: 1; /* Behind text container if overlapping slightly */
+  line-height: 0; /* Prevent extra space below image */
 }
 .bishopimg1 {
-    width: 80%; /* Relative width */
-    max-width: 100%; /* Prevent overflow */
-    height: auto; /* Maintain aspect ratio */
-    /* Removed float */
-    display: block; /* Make it a block element */
-    margin: 0 auto; /* Center the image itself */
+  /* *** REQUIREMENT 2 FIX: Ensure image displays correctly *** */
+  width: 100%;
+  height: auto;
+  display: block; /* Remove potential inline spacing */
+  /* Removed float */
 }
 
+/* Theme Banner */
 .theme-banner {
   width: 100%;
-  height: 300px; /* Reduced default height */
+  height: 450px; /* Adjusted height */
   background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/theme.png');
   background-size: cover;
-  background-attachment: scroll; /* Changed from fixed */
+  background-attachment: scroll; /* Keep scroll for mobile */
   background-position: center center;
+  display: flex; /* Use flex for potential future content */
+  align-items: center;
+  justify-content: center;
 }
 
-/* --- Main Content Container (About Us section) --- */
+/* General Content Container (Used on Home page below banners if needed) */
 .container {
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.85); /* Slightly more transparent */
-  margin: 20px auto; /* Center container horizontally */
-  max-width: 850px;
-  width: 90%; /* Use percentage width */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  padding: 30px;
+  background-color: #ffffff; /* White background */
+  margin: 30px auto; /* Center container */
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   box-sizing: border-box;
 }
 .container h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
 }
 .container p {
-  font-size: 1rem; /* Use rem */
-  line-height: 1.6;
-  margin-bottom: 10px; /* Adjusted margin */
-  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #555;
 }
 
-/* --- Branch Page Specific Styles --- */
-.branch-content-area {
-    padding: 30px 15px; /* Add padding around the branch container */
-    /* Optional background for the branches page */
-    /* background: url('images/some-background.jpg') center/cover fixed; */
+/* --- Page Content Area (Branches & Contact) --- */
+/* *** REQUIREMENT 1: Styling for sub-pages *** */
+.page-content-area {
+    padding: 40px 20px;
+    min-height: 70vh; /* Ensure content area takes up space */
+    /* *** REQUIREMENT 2: Use the other background image *** */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('images/Bishopimg5.jpg'); /* Use the image with white overlay */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Fixed background for parallax effect */
 }
 
-.container1 { /* Styles for the branches container */
-  /* Removed absolute positioning */
-  background-color: rgba(255, 255, 255, 0.9); /* White background for branches */
-  padding: 20px;
-  max-width: 1100px; /* Allow wider container for grid */
-  width: 95%; /* Responsive width */
-  margin: 30px auto; /* Center the container */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  box-sizing: border-box;
+/* Container within the page content area */
+.page-content-container {
+  background-color: rgba(255, 255, 255, 0.98); /* Almost opaque white */
+  padding: 30px 40px;
+  max-width: 1100px;
+  margin: 0 auto; /* Center */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
 }
-.container1 h2 {
-    font-size: 1.8rem;
+.page-content-container h2 {
+    font-size: 2rem;
     color: #333;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
 }
 
+/* Branch Grid Specific Styles */
 .branch-grid {
   display: grid;
-  /* Default: 3 columns for wider screens */
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 10px 0; /* Reduced padding */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 25px;
+  padding: 10px 0;
 }
 
 .branch-item {
-  background: #f2f2f2;
-  padding: 15px; /* Increased padding */
-  border-radius: 6px;
+  background: #fff; /* White background */
+  padding: 20px;
+  border-radius: 8px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee; /* Subtle border */
 }
 .branch-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  background-color: #e9e9e9;
-}
-.branch-item h3 {
-  font-size: 1.1rem; /* Use rem */
-  font-weight: bold;
-  margin: 0;
-  color: dimgray;
-  line-height: 1.3;
-}
-
-/* General Link & List Styles (Ensure these don't conflict) */
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0; /* Reset margin for ul */
-}
-li {
-  margin-bottom: 8px; /* Default margin for list items */
-}
-a {
-  color: #0077cc;
-  /* font-size: 1rem; /* Base size */
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-/* --- Footer Design --- */
-footer {
-  text-align: center;
-  font-size: 0.9rem; /* Base footer font size */
-  padding: 30px 10px 0px 10px; /* Add top padding, remove bottom */
-  background-color: #222;
-  color: #ccc;
-  margin-top: 40px;
-}
-footer * {
-  font-family: "Poppins", sans-serif; /* Consider loading this font if needed */
-  box-sizing: border-box;
-  /* border: none; */ /* Keep this commented unless needed */
-  /* outline: none; */ /* Keep this commented unless needed */
-}
-.row {
-  padding: 1em 1em;
-}
-.row.primary {
-  display: grid;
-  /* Default: 4 columns */
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px; /* Add gap between columns */
-  align-items: flex-start; /* Align items top */
-}
-.column {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 0 1em; /* Padding within columns */
-  min-height: auto; /* Remove fixed min-height */
-  margin-bottom: 20px; /* Add space below columns when stacked */
-}
-.column h3 { /* Footer headings */
-  width: 100%;
-  text-align: left;
-  color: white;
-  font-size: 1.2rem; /* Footer heading size */
-  white-space: normal; /* Allow wrapping */
-  margin-bottom: 15px; /* Space below heading */
-}
-.about p {
-  text-align: left; /* Keep left aligned */
-  line-height: 1.7;
-  margin: 0;
-  color: lightslategrey;
-  font-size: 0.9rem; /* Footer paragraph size */
-}
-button {
-  font-size: 1.0em;
-  padding: 0.8em 1em; /* Adjusted padding */
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 15px; /* Space below button */
-  background: linear-gradient(to right, #7a5dd3, #fff5e6, #d1b84a);
-  color: black;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.3s;
-}
-button:hover {
-    opacity: 0.9;
-}
-.social {
-    text-align: left; /* Align icons left */
-}
-.social a {
-  text-decoration: none;
-  margin: 0 12px 10px 0; /* Adjust spacing */
-  font-size: 30px; /* Smaller icons */
-  color: white;
-  display: inline-block; /* Correct display */
-  transition: color 0.3s;
-}
-.social a:hover {
-  color: goldenrod;
-  text-decoration: none; /* Remove underline on hover */
-}
-.contact p {
-  text-align: left;
-  color: antiquewhite;
-  font-size: 0.9rem; /* Footer paragraph size */
-  line-height: 1.6;
-}
-.map-responsive {
-    overflow:hidden;
-    padding-bottom:56.25%; /* 16:9 Aspect Ratio */
-    position:relative;
-    height:0;
-    margin-top: 10px;
-}
-.map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-}
-.copyright {
-  padding: 15px 10px; /* Adjusted padding */
-  background-color: #25262e;
-  text-align: center;
-  font-size: 0.85rem; /* Smaller copyright text */
-  color: #ccc;
-  margin-top: 20px; /* Space above copyright */
-  width: 100%;
-  box-sizing: border-box; /* Include padding in width */
-}
-
-/* --- REQUIREMENT 4: RESPONSIVE STYLES (Media Queries) --- */
-
-/* Large Tablets & Small Desktops (e.g., <= 1024px) */
-@media screen and (max-width: 1024px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-  .menu ul li a {
-    font-size: 0.95rem;
-    padding: 9px 7px;
-  }
-  .church-banner {
-      min-height: 400px;
-  }
-  .theme-banner {
-      height: 250px;
-  }
-  .container {
-      width: 92%;
-  }
-  .branch-grid {
-      /* Change to 2 columns */
-      grid-template-columns: repeat(2, 1fr);
-  }
-  .row.primary {
-      /* Change footer to 2 columns */
-      grid-template-columns: repeat(2, 1fr);
-  }
-  .column {
-      min-height: auto; /* Override previous min-height */
-  }
-}
-
-/* Tablets (e.g., <= 768px) */
-@media screen and (max-width: 768px) {
-  header {
-      flex-direction: column; /* Stack logo/title and nav */
-      align-items: center;
-  }
-  .menu_left-section {
-      margin-bottom: 15px;
-      justify-content: center;
-      text-align: center;
-  }
-  .menu ul {
-      justify-content: center; /* Center nav items */
-  }
-  .menu ul li {
-      margin-left: 5px;
-      margin-right: 5px; /* Add right margin too */
-  }
-
-  .church-banner {
-      min-height: 300px;
-      padding: 15px;
-  }
-  .container {
-      width: 95%;
-      padding: 15px;
-      margin: 15px auto;
-  }
-  .container h2 {
-      font-size: 1.4rem;
-  }
-  .container p {
-      font-size: 0.95rem;
-  }
-  .bishopimg-container1 {
-      max-width: 300px; /* Further reduce bishop image size */
-  }
-  .theme-banner {
-      height: 200px;
-  }
-  .branch-grid {
-      grid-template-columns: repeat(2, 1fr); /* Keep 2 columns or change to 1 */
-      gap: 15px;
-  }
-  .branch-item h3 {
-    font-size: 1rem;
-  }
-  .container1 { /* Branch container */
-      width: 95%;
-      padding: 15px;
-  }
-  .container1 h2 {
-      font-size: 1.5rem;
-  }
-
-  .row.primary {
-      /* Stack footer columns */
-      grid-template-columns: 1fr;
-  }
-  .column {
-      padding: 0 0.5em; /* Reduce padding */
-      text-align: center; /* Center footer column content */
-  }
-  .column h3, .about p, .contact p, .social {
-      text-align: center; /* Center text within columns */
-  }
-  .social a {
-      font-size: 28px; /* Slightly smaller icons */
-      margin: 0 8px 10px 8px;
-  }
-  button {
-      padding: 0.7em 1em;
-  }
-  .map-responsive {
-      padding-bottom: 65%; /* Adjust aspect ratio slightly if needed */
-  }
-}
-
-/* Mobile Phones (e.g., <= 480px) */
-@media screen and (max-width: 480px) {
-  body {
-      font-size: 14px; /* Reduce base font size */
-  }
-  header {
-    padding: 10px 15px;
-  }
-  header img.logo {
-    height: 40px;
-    margin-right: 10px;
-  }
-  header h1 {
-    font-size: 1.3rem;
-  }
-  .menu ul li a {
-    font-size: 0.9rem;
-    padding: 8px 5px;
-  }
-
-  .church-banner {
-      min-height: auto; /* Let content define height */
-      padding: 20px 10px;
-      /* Maybe hide the bishop image entirely */
-      /* .bishopimg-container1 { display: none; } */
-  }
-  .bishopimg-container1 {
-      display: none; /* Hide bishop image on very small screens */
-  }
-
-  .theme-banner {
-    height: 150px;
-  }
-  .container {
-      width: 96%;
-      margin: 10px auto;
-      padding: 10px;
-  }
-  .container h2 {
-      font-size: 1.3rem;
-  }
-   .container p, p { /* Target general paragraphs too */
-      font-size: 0.9rem;
-      line-height: 1.5;
-  }
-  .branch-grid {
-      /* Stack branches into 1 column */
-      grid-template-columns: 1fr;
-      gap: 12px;
-  }
-  .container1 {
-      padding: 15px 10px;
-  }
-  .container1 h2 {
-      font-size: 1.4rem;
-  }
-  .social a {
-      font-size: 26px;
-  }
-  .column h3 {
-      font-size: 1.1rem;
-  }
-  .about p, .contact p {
-      font-size: 0.85rem;
-  }
-  .copyright {
-      font-size: 0.8rem;
-      padding: 10px;
-  }
-}
+  transform: translateY(-5px) scale(1.02); /* Lift and slightly scale */
+  box-shadow: 0 6px 15px rgba(0
