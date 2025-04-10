@@ -1,137 +1,553 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Candle in the Dark Church</title>
-  <style>
-    /* Base Styles */
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Candle in the Dark Church Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e0e0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-    /* Navigation Bar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #222;
-      padding: 15px 20px;
-    }
-    .navbar img.logo {
-      height: 50px;
-    }
-    .navbar h1 {
-      color: #fff;
-      margin: 0;
-      font-size: 24px;
-    }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            padding: 10px 20px;
+        }
 
-    /* Banner Sections */
-    .banner {
-      width: 100%;
-      height: 450px;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 36px;
-      font-weight: bold;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    }
-    .church-banner {
-      background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg');
-    }
-    .theme-banner {
-      background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/theme.png');
-    }
+        .menu_left-section {
+            display: flex;
+            align-items: center;
+        }
 
-    /* Main Content */
-    .container {
-      background: white;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-    .container h2 {
-      border-bottom: 2px solid #0077cc;
-      padding-bottom: 5px;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-    }
+        header img.logo {
+            height: 50px;
+            margin-right: 20px;
+        }
 
-    /* Links Section */
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 10px 0;
-    }
-    a {
-      color: #0077cc;
-      font-size: 18px;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    a:hover {
-      color: #0055a5;
-      text-decoration: underline;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #fff;
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      font-size: 14px;
-      padding: 20px;
-      background-color: #222;
-      color: #ccc;
-      margin-top: 40px;
-    }
-  </style>
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100%;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+            height: 100%;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 12px 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            height: 100%;
+        }
+
+        .menu ul li a:hover {
+            background: linear-gradient(to right, #7a5dd3, #fff5e6, #d1b84a);
+            color: black;
+            font-weight: bold;
+        }
+
+        .church-banner {
+            width: 100%;
+            height: 850px;
+            background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg');
+            background-size: cover;
+            background-attachment: local;
+            overflow: auto;
+            background-position: center;
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        .bishopimg-container1 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: auto;
+        }
+
+        .bishopimg1 {
+            width: 52%;
+            height: auto;
+            float: right;
+        }
+
+        .theme-banner {
+            width: 100%;
+            height: 600px;
+            background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/theme.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            margin: 20px;
+            max-width: 850px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .background_bishoimg {
+            position: relative;
+            width: 100%;
+            background-image: url('images\\Bishopimg5.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        .container1 {
+            position: absolute;
+            top: 50%;
+            right: 0.5%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.55);
+            padding: 15px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .branch-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .branch-item {
+            background: #f2f2f2;
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .branch-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background-color: #f9f9f9;
+        }
+
+        .branch-item h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+            color: dimgray;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #0077cc;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            padding: 20px;
+            background-color: #222;
+            color: #ccc;
+            margin-top: 40px;
+        }
+
+        footer * {
+            font-family: "Poppins", sans-serif;
+            box-sizing: border-box;
+            border: none;
+            outline: none;
+        }
+
+        .row {
+            padding: 1em 1em;
+        }
+
+        .row.primary {
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr;
+            align-items: stretch;
+        }
+
+        .column {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0 2em;
+            min-height: 15em;
+        }
+
+        h3 {
+            width: 100%;
+            text-align: left;
+            color: white;
+            font-size: 1.4em;
+            white-space: nowrap;
+        }
+
+        .about p {
+            text-align: justify;
+            line-height: 2;
+            margin: 0;
+            color: lightslategrey;
+        }
+
+        button {
+            font-size: 1.0em;
+            padding: 1em;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, #7a5dd3, #fff5e6, #d1b84a);
+            color: black;
+            font-weight: bold;
+        }
+
+        .social a {
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 50px;
+            color: white;
+            justify-content: flex-start;
+        }
+
+        .social a:hover {
+            color: goldenrod;
+        }
+
+        .contact p {
+            text-align: left;
+            color: antiquewhite;
+        }
+
+        .copyright {
+            padding: 10px;
+            background-color: #25262e;
+            text-align: center;
+            font-size: 14px;
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        @media screen and (max-width: 850px) {
+            .row.primary {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 22px;
+            }
+
+            header img.logo {
+                height: 40px;
+            }
+
+            p,
+            a,
+            li {
+                font-size: 16px;
+            }
+
+            .church-banner {
+                height: 150px;
+            }
+
+            .theme-banner {
+                height: 100px;
+            }
+        }
+    </style>
+    <script>
+        function adjustLayout() {
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth < 600) {
+                document.querySelector('header h1').style.fontSize = '22px';
+                document.querySelector('header img.logo').style.height = '40px';
+                document.querySelectorAll('p, a, li').forEach(el => el.style.fontSize = '16px');
+                document.querySelector('.church-banner').style.height = '150px';
+                document.querySelector('.theme-banner').style.height = '100px';
+
+                const branchGrid = document.querySelector('.branch-grid');
+                if (branchGrid) {
+                    branchGrid.style.gridTemplateColumns = '1fr';
+                }
+            } else if (screenWidth < 850) {
+                const branchGrid = document.querySelector('.branch-grid');
+                if (branchGrid) {
+                    branchGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                }
+            } else {
+                document.querySelector('header h1').style.fontSize = '28px';
+                document.querySelector('header img.logo').style.height = '50px';
+                document.querySelectorAll('p, a, li').forEach(el => el.style.fontSize = '18px');
+                document.querySelector('.church-banner').style.height = '850px';
+                document.querySelector('.theme-banner').style.height = '600px';
+
+                const branchGrid = document.querySelector('.branch-grid');
+                if (branchGrid) {
+                    branchGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+                }
+            }
+        }
+
+        window.onload = adjustLayout;
+        window.onresize = adjustLayout;
+    </script>
 </head>
+
 <body>
-  <div class='navbar'>
-    <img src='https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/logo.png' alt='Logo' class='logo'>
-    <h1>Candle in the Dark Church</h1>
-  </div>
+    <header>
+        <div class="menu_left-section">
+            <img src='https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/logo.png' alt='Logo'
+                class='logo'>
+            <h1>Candle in the Dark Church</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Dag_Heward-Mills" target="_blank">About Dag
+                        Heward-Mills</a></li>
+                <li><a href="https://www.daghewardmills.org/" target="=_blank">DHMM</a></li>
+                <li><a href="https://udnews.org/" target="=_blank">News</a></li>
+                <li><a href="subfiles\\contact.html" target="=_blank">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <div class='banner church-banner'>"Shining Light in a Dark World"</div>
-  <div class='banner theme-banner'>"Theme of the Year: Greater and Better"</div>
-
-  <div class='container'>
-    <h2>About Us</h2>
-    <p>
-      Candle in the Dark Church is a vibrant Christian ministry under the Dag Heward-Mills Ministry (DHMM),
-      dedicated to spreading the Gospel through evangelism, church planting, and discipleship. 
-    </p>
-    <h2>Links</h2>
-    <ul>
-      <li><a href='https://en.wikipedia.org/wiki/Dag_Heward-Mills' target='_blank'>About Dag Heward-Mills</a></li>
-      <li><a href='https://udnews.org/' target='_blank'>UDnews</a></li>
-      <li><a href='https://www.daghewardmills.org/' target='_blank'>DHMM</a></li>
-      <li><a href='https://dagbooks.org/' target='_blank'>DHMM Books</a></li>
-      <li><a href='https://www.instagram.com/daghmills' target='_blank'>DHMM Instagram</a></li>
-      <li><a href='https://www.instagram.com/cidc.hq' target='_blank'>CIDC.HQ Instagram</a></li>
-      <li><a href='https://x.com/CIDCHQ' target='_blank'>CIDC.HQ Twitter</a></li>
-      <li><a href='https://www.facebook.com/candleinthedarkhq' target='_blank'>CIDC.HQ Facebook</a></li>
-      <li><a href='https://maps.app.goo.gl/Hfwifi5kKLKQV86CA' target='_blank'>CIDC Main HQ in Italy</a></li>
-      <li><a href='https://maps.app.goo.gl/aRJFuNM6ZYSctqU2A' target='_blank'>CIDC Location in Portugal</a></li>
-    </ul>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Candle in the Dark Church. All rights reserved.</p>
-  </footer>
+    <div class='church-banner'>
+        <div class="container">
+            <h2>About Us</h2>
+            <p>
+                Candle in the Dark Church is a Christian ministry under the Dag Heward-Mills Ministry (DHMM), dedicated
+                to spreading the Gospel through evangelism, church planting, and discipleship. Led by Bishop Immanuel
+                Obeng, the church has its headquarters in Milan, Cologno Nord, Italy, with branches across France, Spain,
+                Belgium, Germany, Hungary, and Budapest. Through spirit-filled worship and practical teachings, it
+                nurtures believers to grow in faith and fulfill their divine purpose. Committed to raising leaders,
+                sending missionaries, and transforming communities through the power of the Holy Spirit, the church
+                follows the vision of DHMM and the teachings of Evangelist Dag Heward-Mills.
+                <br><br>
+                <span style="color: red;">'Go ye into all the world, and preach the gospel to every creature.' – Mark
+                    16:15</span>
+            </p>
+        </div>
+        <div class="bishopimg-container1">
+            <img src="images\\Bishopimg2a.png" alt="bishopimage" class="bishopimg1">
+        </div>
+    </div>
+    <div class='theme-banner'></div>
+    <div class="background_bishoimg">
+        <div class='container1'>
+            <h2 align="center">Church Branches in Italy</h2>
+            <div class="branch-grid">
+                <div class="branch-item">
+                    <h3>Alessandria</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Bergamo</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Bologna</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Bologna Centrale </h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Bologna - Savvena</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Brescia</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Como</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Empoli</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Firenze</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Genova</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Lodi</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Mantova</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Milan</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Milano-Famagosta</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Milan - Famagosta (Italiano)</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Modena</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Monza</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Mortara</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Napoli</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Novara</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Parma</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Piacenza</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Reggio Emilia</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Rome</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Rome - Guidona</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Rome - Piazza Venezia</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Sassuolo</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Torino</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Udine</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Verona</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Varese</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Vicenza</h3>
+                </div>
+                <div class="branch-item">
+                    <h3>Voghera</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row primary">
+            <div class="column about">
+                <h3>About Us</h3>
+                <p>
+                    Candle in the Dark Church is a Christian ministry under the Dag Heward-Mills Ministry (DHMM),
+                    dedicated to spreading the Gospel through evangelism, church planting, and discipleship.
+                </p>
+            </div>
+            <div class="column">
+                <h3>Reach Out to Us</h3>
+                <div>
+                    <button>Write to Us – We're Here for You</button>
+                </div>
+                <h3>Connect with the Church</h3>
+                <div class="social" align="left">
+                    <a href="https://www.facebook.com/candleinthedarkhq" target="_blank">
+                        <i class="fa-brands fa-facebook-square"></i>
+                    </a>
+                    <a href="https://www.instagram.com/cidc.hq/?igsh=czhpaGxpNmQ0bGli" target="_blank">
+                        <i class="fa-brands fa-instagram-square"></i>
+                    </a>
+                    <a href="https://x.com/i/flow/login?redirect_after_login=%2FCIDCHQ" target="_blank">
+                        <i class="fa-brands fa-twitter-square"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="column">
+                <h3>Our Church Location</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d742.294540177999!2d9.2859729!3d45.5398515!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786b811346eb4a5%3A0x608990aa942f347f!2sVia%20Wolfgang%20Amadeus%20Mozart%2C%2039%2C%2020093%20Milano%20MI%2C%20Italy!5e1!3m2!1sen!2spt!4v1743963190092!5m2!1sen!2spt"
+                    width="300"
+                    height="200"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="column contact">
+                <h3>Contact Us</h3>
+                <p>Via Wolfgang Amadeus Mozart, 39, 20093 Milano MI, Italy
+                    <br>
+                    candleinthedarkchurch@gmail.com
+                    +39 389 159 0184
+                </p>
+            </div>
+        </div>
+        <div class="row copyright">
+            <p>© 2025 Candle in the Dark Church. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
+
 </html>
