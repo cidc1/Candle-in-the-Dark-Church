@@ -1,260 +1,151 @@
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Candle in the Dark Church</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-<style>
-  #bishopSlideshowCanvas {
-    width: 100%; /* Make the canvas responsive */
-    max-width: 600px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Prevent extra space below the canvas */
-    margin: 0 auto; /* Center the canvas */
-    opacity: 0; /* Start with opacity 0 for fade effect */
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .slideshow-controls {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    z-index: 3; /* Ensure controls are above the canvas */
-  }
-
-  .slide-arrow {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-    font-size: 1.2rem;
-  }
-
-  .slide-arrow:hover {
-    opacity: 1;
-  }
-
-  .slide-arrow.prev {
-    left: 10px;
-  }
-
-  .slide-arrow.next {
-    right: 10px;
-  }
-</style>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Candle in the Dark Church</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="menu_left-section">
-      <img src='https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/logo.png' alt='Logo' class='logo'>
-      <h1>Candle in the Dark Church</h1>
-    </div>
-    <nav class="menu">
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="https://www.daghewardmills.org/" target="_blank">DHMM</a></li>
-          <li><a href="branches.html">Branches</a></li>
-          <li><a href="https://udnews.org/" target="_blank">News</a></li>
-          <li><a href="books.html">Books</a></li>
-          <li><a href="media-links.html">DHMM Media</a></li>
-          <li><a href="music.html">Music</a></li>
-          <li><a href="https://machaneh.org/" target="_blank">Audio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-  </header>
+  <header>
+    <div class="menu_left-section">
+      <img src='https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/logo.png' alt='Logo' class='logo'>
+      <h1>Candle in the Dark Church</h1>
+    </div>
+    <nav class="menu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="https://www.daghewardmills.org/" target="_blank">DHMM</a></li>
+          <li><a href="branches.html">Branches</a></li>
+          <li><a href="https://udnews.org/" target="_blank">News</a></li>
+          <li><a href="books.html">Books</a></li>
+          <li><a href="media-links.html">DHMM Media</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="https://machaneh.org/" target="_blank">Audio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+  </header>
 
-  <div class='church-banner'>
-    <div class="container">
-      <h2>About Us</h2>
-      <p>
-        Candle in the Dark Church, a vibrant ministry under the Dag Heward-Mills Ministry (DHMM), is passionately dedicated to spreading the Gospel. Led by Bishop Immanuel Obeng from our headquarters in Milan, Italy, we focus on evangelism, church planting, and discipleship across nations like France, Spain, Austria, Germany, Hungary, Poland, and Romania. Empowered by the Holy Spirit, we are committed to raising leaders and sending missionaries, following the vision of Evangelist Dag Heward-Mills to transform communities worldwide.
-        <br><br>
-        <span>'Go ye into all the world, and preach the gospel to every creature.' – Mark 16:15</span>
-      </p>
-    </div>
-    <div class="bishopimg-container1" style="position: relative;">
-      <canvas id="bishopSlideshowCanvas"></canvas>
-      <div class="slideshow-controls">
-        <button class="slide-arrow prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-        <button class="slide-arrow next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </div>
+  <div class='church-banner'>
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        Candle in the Dark Church, a vibrant ministry under the Dag Heward-Mills Ministry (DHMM), is passionately dedicated to spreading the Gospel. Led by Bishop Immanuel Obeng from our headquarters in Milan, Italy, we focus on evangelism, church planting, and discipleship across nations like France, Spain, Austria, Germany, Hungary, Poland, and Romania. Empowered by the Holy Spirit, we are committed to raising leaders and sending missionaries, following the vision of Evangelist Dag Heward-Mills to transform communities worldwide.
+        <br><br>
+        <span>'Go ye into all the world, and preach the gospel to every creature.' – Mark 16:15</span>
+      </p>
+    </div>
+    <div class="bishopimg-container1">
+      <img src="images/bishopimg2a.png" alt="Bishop Dag Heward-Mills is the founder and Bishop Immanuel is leading the Candle in the Dark Church" class="bishopimg1" id="bishopSlideshowImage">
+      </div>
+  </div>
 
-  <div class='theme-banner'>
-      </div>
+  <div class='theme-banner'>
+      </div>
 
-  <footer>
-      <div class="row primary">
-        <div class="column about">
-         <h3>About Us</h3>
-         <p>
-            Candle in the Dark Church, under DHMM, is led by Bishop Immanuel Obeng, spreading the Gospel globally.
-         </p>
-       </div>
-       <div class="column">
-         <h3>Quick Links</h3>
-         <ul class="footer-links">
-            <li><a href="https://www.daghewardmills.org/" target="_blank">DHMM</a></li>
-            <li><a href="branches.html">Branches</a></li>
-            <li><a href="https://udnews.org/" target="_blank">News</a></li>
-            <li><a href="books.html">Books</a></li>
-            <li><a href="media-links.html">DHMM Media</a></li>
-            <li><a href="music.html">Music</a></li>
-            <li><a href="https://machaneh.org/" target="_blank">Audio</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-       </div>
-       <div class="column map-column">
-         <h3>Our Location</h3>
-         <div class="map-responsive">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.337470107919!2d9.27891521555678!3d45.52891297910146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c799a6b1c6d7%3A0xf1d1a08f35a1841a!2sVia%20Wolfgang%20Amadeus%20Mozart%2C%2039%2C%2020093%20Cologno%20Monzese%20MI%2C%20Italy!5e0!3m2!1sen!2sus!4v1678886150123!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-           </div>
-       </div>
-       <div class="column contact">
-         <h3>Contact Us</h3>
-           <p><i class="fas fa-map-marker-alt"></i> Via Wolfgang Amadeus Mozart, 39,<br> 20093 Milano MI, Italy</p>
-           <p><i class="fas fa-envelope"></i> candleinthedarkchurch@gmail.com</p>
-           <p><i class="fas fa-phone"></i> +39 389 159 0184</p>
-           <h3>Connect</h3>
-           <div class="social">
-            <a href="https://www.facebook.com/candleinthedarkhq" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://www.instagram.com/cidc.hq/?igsh=czhpaGxpNmQ0bGli" target="_blank" title="Instagram"><i class="fab fa-instagram-square"></i></a>
-            <a href="https://x.com/i/flow/login?redirect_after_login=%2FCIDCHQ" target="_blank" title="Twitter/X"><i class="fab fa-twitter-square"></i></a>
-           </div>
-       </div>
-     </div>
-     <div class="row copyright">
-       <p>© <script>document.write(new Date().getFullYear())</script> Candle in the Dark Church. All rights reserved.</p>
-     </div>
-  </footer>
+  <footer>
+      <div class="row primary">
+        <div class="column about">
+         <h3>About Us</h3>
+         <p>
+            Candle in the Dark Church, under DHMM, is led by Bishop Immanuel Obeng, spreading the Gospel globally.
+         </p>
+       </div>
+       <div class="column">
+         <h3>Quick Links</h3>
+         <ul class="footer-links">
+            <li><a href="https://www.daghewardmills.org/" target="_blank">DHMM</a></li>
+            <li><a href="branches.html">Branches</a></li>
+            <li><a href="https://udnews.org/" target="_blank">News</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="media-links.html">DHMM Media</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="https://machaneh.org/" target="_blank">Audio</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+       </div>
+       <div class="column map-column">
+         <h3>Our Location</h3>
+         <div class="map-responsive">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.337470107919!2d9.27891521555678!3d45.52891297910146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c799a6b1c6d7%3A0xf1d1a08f35a1841a!2sVia%20Wolfgang%20Amadeus%20Mozart%2C%2039%2C%2020093%20Cologno%20Monzese%20MI%2C%20Italy!5e0!3m2!1sen!2sus!4v1678886150123!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           </div>
+       </div>
+       <div class="column contact">
+         <h3>Contact Us</h3>
+           <p><i class="fas fa-map-marker-alt"></i> Via Wolfgang Amadeus Mozart, 39,<br> 20093 Milano MI, Italy</p>
+           <p><i class="fas fa-envelope"></i> candleinthedarkchurch@gmail.com</p>
+           <p><i class="fas fa-phone"></i> +39 389 159 0184</p>
+           <h3>Connect</h3>
+           <div class="social">
+            <a href="https://www.facebook.com/candleinthedarkhq" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/cidc.hq/?igsh=czhpaGxpNmQ0bGli" target="_blank" title="Instagram"><i class="fab fa-instagram-square"></i></a>
+            <a href="https://x.com/i/flow/login?redirect_after_login=%2FCIDCHQ" target="_blank" title="Twitter/X"><i class="fab fa-twitter-square"></i></a>
+           </div>
+       </div>
+     </div>
+     <div class="row copyright">
+       <p>© <script>document.write(new Date().getFullYear())</script> Candle in the Dark Church. All rights reserved.</p>
+     </div>
+  </footer>
 
 <script>
-    const bishopCanvas = document.getElementById('bishopSlideshowCanvas');
-    const ctx = bishopCanvas.getContext('2d');
-    const bishopImageUrls = [
-        'images/Bishopimg2a.png',
-        'images/Bishopimg3.png',
-        'images/Bishopimg4.png',
-        'images/Bishopimg5.jpg',
-        'images/Bishopimg6.jpg',
-        'images/Bishopimg7.png',
-        'images/Bishopimg8.jpg',
-        'images/Bishopimg9.jpg',
-        'images/Bishopimg10.jpg',
-        'images/Bishopimg11.jpg',
-        'images/Bishopimg5.jpg'
-    ];
-    const bishopAltTexts = [
-        'Bishop Immanuel Obeng leading the Candle in the Dark Church',
-        'Evangelist Dag Heward-Mills speaking',
-        'Candle in the Dark Church special event',
-        'Candle in the Dark Church worship service',
-        'Candle in the Dark Church congregation',
-        'Candle in the Dark Church gathering',
-        'Candle in the Dark Church members',
-        'Candle in the Dark Church meeting',
-        'Candle in the Dark Church service',
-        'Candle in the Dark Church attendees',
-        'Candle in the Dark Church community'
-    ];
+    const bishopImageElement = document.getElementById('bishopSlideshowImage');
+    const bishopImages = [
+        'images/Bishopimg2a.png', // Bishop Dag1
+        'images/Bishopimg3.png', // Bishop Dag2
+        'images/Bishopimg4.png', // Example: Event photo
+        'images/Bishopimg5.jpg', // Example: Congregation photo1 (Removed extra space)
+        'images/Bishopimg6.jpg',
+        'images/Bishopimg7.png',
+        'images/Bishopimg8.jpg',
+        'images/Bishopimg9.jpg',
+        'images/Bishopimg10.jpg',
+        'images/Bishopimg11.jpg',
+        'images/Bishopimg5.jpg'
+    ];
+    const bishopAltTexts = [
+        'Bishop Immanuel Obeng leading the Candle in the Dark Church',
+        'Evangelist Dag Heward-Mills speaking', // More specific alt text
+        'Candle in the Dark Church special event', // Update with actual description
+        'Candle in the Dark Church worship service', // Update with actual description
+        'Candle in the Dark Church congregation', // Add description for bishopimg6.jpg
+        'Candle in the Dark Church gathering',    // Add description for bishopimg7.png
+        'Candle in the Dark Church members',     // Add description for bishopimg8.jpg
+        'Candle in the Dark Church meeting',     // Add description for bishopimg9.jpg
+        'Candle in the Dark Church service',     // Add description for bishopimg10.jpg
+        'Candle in the Dark Church attendees',   // Add description for the extra bishopimg5.png
+        'Candle in the Dark Church community'    // Add description for the last bishopimg5.png
+    ];
 
-    let currentImageIndex = 0;
-    const images = [];
-    let slideshowInterval; // Variable to hold the interval
+    let currentImageIndex = 0;
 
-    // Preload images
-    function preloadImages() {
-        bishopImageUrls.forEach((url, index) => {
-            const img = new Image();
-            img.src = url;
-            img.alt = bishopAltTexts[index]; // Set alt text for accessibility
-            img.onload = () => {
-                images[index] = img;
-                // Once the first image is loaded, set the canvas size and start the slideshow
-                if (index === 0 && images[0]) {
-                    bishopCanvas.width = images[0].naturalWidth;
-                    bishopCanvas.height = images[0].naturalHeight;
-                    startSlideshow();
-                    bishopCanvas.style.opacity = 1; // Fade in the canvas
-                }
-            };
-            img.onerror = () => {
-                console.error(`Error loading image: ${url}`);
-            };
-        });
-    }
+    function changeBishopImage() {
+        currentImageIndex = (currentImageIndex + 1) % bishopImages.length; // Loop
+        if (bishopImageElement) {
+            bishopImageElement.style.opacity = 0; // Start fade out
+            // Use setTimeout to change src after fade-out starts
+            setTimeout(() => {
+                bishopImageElement.src = bishopImages[currentImageIndex];
+                bishopImageElement.alt = bishopAltTexts[currentImageIndex]; // Update alt text
+                bishopImageElement.style.opacity = 1; // Fade in new image
+            }, 500); // This duration should match the CSS transition duration
+        }
+    }
 
-    function drawImageOnCanvas() {
-        if (images[currentImageIndex]) {
-            ctx.clearRect(0, 0, bishopCanvas.width, bishopCanvas.height); // Clear the canvas
-            ctx.drawImage(images[currentImageIndex], 0, 0, bishopCanvas.width, bishopCanvas.height);
-        }
-    }
-
-    function startSlideshow() {
-        if (images.length > 1 && !slideshowInterval) {
-            slideshowInterval = setInterval(() => {
-                changeSlide(1); // Automatically advance to the next slide
-            }, 5000);
-        } else if (images[0]) {
-            drawImageOnCanvas(); // Draw the single image if only one
-            bishopCanvas.style.opacity = 1;
-        }
-    }
-
-    function changeSlide(direction) {
-        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-        bishopCanvas.style.opacity = 0; // Start fade out
-        setTimeout(() => {
-            drawImageOnCanvas();
-            bishopCanvas.style.opacity = 1; // Fade in
-        }, 500); // Match CSS transition duration
-    }
-
-    // Stop automatic slideshow when manually navigating
-    function stopSlideshow() {
-        clearInterval(slideshowInterval);
-        slideshowInterval = null;
-    }
-
-    // Event listeners for arrow clicks
-    document.addEventListener('DOMContentLoaded', () => {
-        const prevButton = document.querySelector('.slide-arrow.prev');
-        const nextButton = document.querySelector('.slide-arrow.next');
-
-        if (prevButton) {
-            prevButton.addEventListener('click', () => {
-                stopSlideshow();
-                changeSlide(-1);
-            });
-        }
-
-        if (nextButton) {
-            nextButton.addEventListener('click', () => {
-                stopSlideshow();
-                changeSlide(1);
-            });
-        }
-
-        preloadImages(); // Start preloading images after buttons are set up
-    });
+    // Ensure the image element exists before setting interval
+    if (bishopImageElement && bishopImages.length > 1) {
+        // Change image every 5 seconds (5000 milliseconds)
+        setInterval(changeBishopImage, 5000);
+    } else if (bishopImageElement) {
+        // If only one image, ensure opacity is 1
+        bishopImageElement.style.opacity = 1;
+    }
 </script>
 
 </body>
