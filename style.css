@@ -1,260 +1,260 @@
 /* Base Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
-  background-color: #f0f0f0; /* Slightly lighter grey */
-  color: #333;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-size: 16px;
-  line-height: 1.6; /* Default line height */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+  background-color: #f0f0f0; /* Slightly lighter grey */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6; /* Default line height */
 }
 
 /* --- Header --- */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Allow wrapping */
-  background-color: #222;
-  padding: 10px 30px; /* Increased horizontal padding */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  position: sticky; /* Make header sticky */
-  top: 0;
-  z-index: 1000; /* Ensure header stays on top */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping */
+  background-color: #222;
+  padding: 10px 30px; /* Increased horizontal padding */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky; /* Make header sticky */
+  top: 0;
+  z-index: 1000; /* Ensure header stays on top */
 }
 .menu_left-section {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px; /* Space when wrapping */
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px; /* Space when wrapping */
 }
 header img.logo {
-  height: 50px;
-  margin-right: 15px;
+  height: 50px;
+  margin-right: 15px;
 }
 header h1 {
-  margin: 0;
-  font-size: 1.7rem; /* Responsive font size */
-  color: #fff;
-  font-weight: 600;
-  line-height: 1.2;
+  margin: 0;
+  font-size: 1.7rem; /* Responsive font size */
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* Navigation Menu */
 .menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap; /* Allow menu items to wrap */
-  align-items: center; /* Vertically align items */
-  justify-content: center; /* Center items when wrapping */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Allow menu items to wrap */
+  align-items: center; /* Vertically align items */
+  justify-content: center; /* Center items when wrapping */
 }
 .menu ul li {
-  margin-left: 15px; /* Slightly more space */
-  margin-bottom: 5px; /* Space for wrapped items */
+  margin-left: 15px; /* Slightly more space */
+  margin-bottom: 5px; /* Space for wrapped items */
 }
 .menu ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  padding: 10px 12px; /* More padding */
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: inline-block;
-  line-height: 1.4;
-  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 10px 12px; /* More padding */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  line-height: 1.4;
+  font-weight: 500;
 }
 .menu ul li a:hover, .menu ul li a.active { /* Style for active page */
-  background: linear-gradient(to right, #7a5dd3, #a891e1, #d1b84a);
-  color: #111; /* Darker text on hover */
-  font-weight: 600;
+  background: linear-gradient(to right, #7a5dd3, #a891e1, #d1b84a);
+  color: #111; /* Darker text on hover */
+  font-weight: 600;
 }
 
 /* --- Hero Banner (Church Banner) --- */
 .church-banner {
-  width: 100%;
-  height: 80vh; /* Use viewport height, minimum 600px */
-  min-height: 600px;
-  max-height: 850px; /* Limit max height */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg'); /* Added subtle overlay */
-  background-size: cover;
-  background-position: center center;
-  position: relative; /* Needed for absolute positioning of children */
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  padding: 30px; /* Base padding */
-  box-sizing: border-box;
-  color: #fff; /* Default text color for banner content */
-  overflow: hidden; /* Hide anything overflowing from absolute children */
+  width: 100%;
+  height: 80vh; /* Use viewport height, minimum 600px */
+  min-height: 600px;
+  max-height: 850px; /* Limit max height */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/banner.jpg'); /* Added subtle overlay */
+  background-size: cover;
+  background-position: center center;
+  position: relative; /* Needed for absolute positioning of children */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 30px; /* Base padding */
+  box-sizing: border-box;
+  color: #fff; /* Default text color for banner content */
+  overflow: hidden; /* Hide anything overflowing from absolute children */
 }
 
 /* Container within the banner (for About Us text) */
 .church-banner .container {
-  padding: 25px;
-  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for text readability */
-  margin: 0; /* Reset margin */
-  max-width: 50%; /* Limit width relative to banner */
-  width: auto; /* Let content determine width */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  color: #f0f0f0; /* Light text color */
-  position: relative; /* Keep in flow */
-  z-index: 2; /* Above banner background & bishop image */
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for text readability */
+  margin: 0; /* Reset margin */
+  max-width: 50%; /* Limit width relative to banner */
+  width: auto; /* Let content determine width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  color: #f0f0f0; /* Light text color */
+  position: relative; /* Keep in flow */
+  z-index: 2; /* Above banner background & bishop image */
 }
 .church-banner .container h2 {
-  color: #fff; /* White heading */
-  font-size: 2rem;
-  margin-bottom: 15px;
-  text-align: left;
+  color: #fff; /* White heading */
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: left;
 }
 .church-banner .container p {
-  color: #e0e0e0; /* Slightly off-white paragraph */
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 10px;
-  text-align: left; /* Justify looked cramped */
+  color: #e0e0e0; /* Slightly off-white paragraph */
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  text-align: left; /* Justify looked cramped */
 }
 .church-banner .container span { /* Style for the scripture */
-    color: #ffd700; /* Golden color */
-    font-weight: bold;
-    font-style: italic;
+    color: #ffd700; /* Golden color */
+    font-weight: bold;
+    font-style: italic;
 }
 
 
 /* Bishop Image Container */
 .bishopimg-container1 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 48%; /* Adjusted width */
-  max-width: 550px; /* Max size */
-  z-index: 1; /* Below text container if overlapping slightly */
-  line-height: 0; /* Prevent extra space below image */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 48%; /* Adjusted width */
+  max-width: 550px; /* Max size */
+  z-index: 1; /* Below text container if overlapping slightly */
+  line-height: 0; /* Prevent extra space below image */
 }
 .bishopimg1 {
-  width: 100%;
-  height: auto;
-  display: block; /* Remove potential inline spacing */
-  /* --- Style for Slideshow Transition --- */
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  height: auto;
+  display: block; /* Remove potential inline spacing */
+  /* --- Style for Slideshow Transition --- */
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Theme Banner */
 .theme-banner {
-  width: 100%;
-  height: 450px; /* Adjusted height */
-  background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/theme.png');
-  background-size: cover;
-  background-attachment: scroll; /* Keep scroll for mobile */
-  background-position: center center;
-  display: flex; /* Use flex for potential future content */
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 450px; /* Adjusted height */
+  background-image: url('https://raw.githubusercontent.com/cidc1/Candle-in-the-Dark-Church/main/theme.png');
+  background-size: cover;
+  background-attachment: scroll; /* Keep scroll for mobile */
+  background-position: center center;
+  display: flex; /* Use flex for potential future content */
+  align-items: center;
+  justify-content: center;
 }
 
 /* General Content Container (Used on Home page below banners if needed) */
 .container {
-  padding: 30px;
-  background-color: #ffffff; /* White background */
-  margin: 30px auto; /* Center container */
-  max-width: 900px;
-  width: 90%;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  box-sizing: border-box;
+  padding: 30px;
+  background-color: #ffffff; /* White background */
+  margin: 30px auto; /* Center container */
+  max-width: 900px;
+  width: 90%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 .container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
 }
 .container p {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 15px;
-  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #555;
 }
 
 /* --- Page Content Area (Branches, Contact, Music, Media) --- */
 .page-content-area {
-    padding: 40px 20px;
-    min-height: 70vh; /* Ensure content area takes up space */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('images/Bishopimg5.jpg'); /* Use the image with white overlay */
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed; /* Fixed background for parallax effect */
+    padding: 40px 20px;
+    min-height: 70vh; /* Ensure content area takes up space */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('images/Bishopimg5.jpg'); /* Use the image with white overlay */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Fixed background for parallax effect */
 }
 
 /* Container within the page content area */
 .page-content-container {
-  background-color: rgba(255, 255, 255, 0.98); /* Almost opaque white */
-  padding: 30px 40px;
-  max-width: 1100px;
-  margin: 0 auto; /* Center */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.98); /* Almost opaque white */
+  padding: 30px 40px;
+  max-width: 1100px;
+  margin: 0 auto; /* Center */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
 }
 .page-content-container h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 30px;
-    text-align: center;
-    font-weight: 600;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
 }
 
 /* Branch Grid Specific Styles */
 .branch-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 25px;
-  padding: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 25px;
+  padding: 10px 0;
 }
 .branch-item {
-  background: #fff; /* White background */
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #eee; /* Subtle border */
+  background: #fff; /* White background */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee; /* Subtle border */
 }
 .branch-item:hover {
-  transform: translateY(-5px) scale(1.02); /* Lift and slightly scale */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  background-color: #fcfcfc;
+  transform: translateY(-5px) scale(1.02); /* Lift and slightly scale */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  background-color: #fcfcfc;
 }
 .branch-item h3 {
-  font-size: 1.2rem;
-  font-weight: 600; /* Bolder */
-  margin: 0;
-  color: #444; /* Dark grey */
-  line-height: 1.4;
+  font-size: 1.2rem;
+  font-weight: 600; /* Bolder */
+  margin: 0;
+  color: #444; /* Dark grey */
+  line-height: 1.4;
 }
 
 /* --- Contact Page Specific Styles --- */
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 40px;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 40px;
+    align-items: flex-start;
 }
 .contact-details, .contact-form-section {
-    background-color: #f9f9f9; /* Light background for sections */
-    padding: 25px;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    background-color: #f9f9f9; /* Light background for sections */
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 .contact-details h3, .contact-form-section h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.4rem;
-    color: #333;
-    border-bottom: 2px solid #7a5dd3; /* Accent line */
-    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: #333;
+    border-bottom: 2px solid #7a5dd3; /* Accent line */
+    padding-bottom: 8px;
 }
 .contact-details p { margin-bottom: 15px; line-height: 1.8; font-size: 1rem; color: #555; }
 .contact-details i { margin-right: 10px; color: #7a5dd3; width: 20px; text-align: center; }
@@ -265,23 +265,23 @@ header h1 {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc;
-    border-radius: 4px; box-sizing: border-box; font-size: 1rem; font-family: inherit;
+    width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc;
+    border-radius: 4px; box-sizing: border-box; font-size: 1rem; font-family: inherit;
 }
 .contact-form textarea { height: 150px; resize: vertical; }
 .contact-form button {
-  font-size: 1.05rem; padding: 12px 25px; width: auto; border-radius: 5px;
-  background: linear-gradient(to right, #7a5dd3, #9d84de); color: white; font-weight: bold;
-  border: none; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; margin-top: 10px;
+  font-size: 1.05rem; padding: 12px 25px; width: auto; border-radius: 5px;
+  background: linear-gradient(to right, #7a5dd3, #9d84de); color: white; font-weight: bold;
+  border: none; cursor: pointer; transition: background-color 0.3s ease, transform 0.2s ease; margin-top: 10px;
 }
 .contact-form button:hover { background: linear-gradient(to right, #6a4cc3, #8d74ce); transform: translateY(-2px); }
 
 /* --- Music Page Specific Styles --- */
 .music-links-container { text-align: center; }
 .music-link-item {
-    display: inline-block; margin: 20px; padding: 25px; background-color: #fff; border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 280px; text-decoration: none; color: #333; vertical-align: top; /* Align items if height differs */
+    display: inline-block; margin: 20px; padding: 25px; background-color: #fff; border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px; text-decoration: none; color: #333; vertical-align: top; /* Align items if height differs */
 }
 .music-link-item:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
 .music-link-item i { font-size: 3rem; color: #7a5dd3; margin-bottom: 15px; display: block; }
@@ -293,8 +293,8 @@ header h1 {
 .media-links-list { list-style: none; padding: 0; margin: 0; flex: 1; min-width: 250px; }
 .media-links-list li { margin-bottom: 15px; }
 .media-links-list a {
-    display: inline-flex; align-items: center; text-decoration: none; font-size: 1.1rem;
-    color: #333; padding: 8px 12px; border-radius: 5px; transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex; align-items: center; text-decoration: none; font-size: 1.1rem;
+    color: #333; padding: 8px 12px; border-radius: 5px; transition: background-color 0.3s ease, color 0.3s ease;
 }
 .media-links-list a:hover { background-color: #e9e9e9; color: #000; text-decoration: none; }
 .media-links-list i { font-size: 1.8rem; margin-right: 15px; width: 30px; text-align: center; }
@@ -318,19 +318,19 @@ a:hover { color: #4a2c93; text-decoration: underline; }
 
 /* --- Footer --- */
 footer {
-  font-size: 0.9rem; padding: 40px 15px 0px 15px; background-color: #2a2a2a;
-  color: #bbb; margin-top: 0; border-top: 4px solid #7a5dd3;
+  font-size: 0.9rem; padding: 40px 15px 0px 15px; background-color: #2a2a2a;
+  color: #bbb; margin-top: 0; border-top: 4px solid #7a5dd3;
 }
 footer * { font-family: "Poppins", sans-serif; box-sizing: border-box; }
 .row { padding: 1em 0; }
 .row.primary {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px; align-items: flex-start; max-width: 1200px; margin: 0 auto; padding: 1em 1em;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px; align-items: flex-start; max-width: 1200px; margin: 0 auto; padding: 1em 1em;
 }
 .column { width: 100%; display: flex; flex-direction: column; padding: 0 1em; margin-bottom: 20px; }
 .column h3 { /* Footer headings */
-  text-align: left; color: #fff; font-size: 1.2rem; white-space: normal;
-  margin-bottom: 15px; padding-bottom: 5px; border-bottom: 1px solid #555;
+  text-align: left; color: #fff; font-size: 1.2rem; white-space: normal;
+  margin-bottom: 15px; padding-bottom: 5px; border-bottom: 1px solid #555;
 }
 .about p { text-align: left; line-height: 1.7; margin: 0; color: #ccc; font-size: 0.9rem; }
 
@@ -353,77 +353,77 @@ ul.footer-links li a:hover { color: #fff; text-decoration: underline; }
 
 /* Large Tablets & Small Desktops (<= 1024px) */
 @media screen and (max-width: 1024px) {
-  header { padding: 10px 20px; }
-  header h1 { font-size: 1.6rem; }
-  .menu ul li a { padding: 9px 10px; }
-  .church-banner { height: auto; min-height: 550px; padding: 25px; }
-  .church-banner .container { max-width: 60%; }
-  .bishopimg-container1 { width: 45%; }
-  .theme-banner { height: 400px; }
-  .page-content-container { padding: 25px 30px; }
-  .contact-container { gap: 30px; }
+  header { padding: 10px 20px; }
+  header h1 { font-size: 1.6rem; }
+  .menu ul li a { padding: 9px 10px; }
+  .church-banner { height: auto; min-height: 550px; padding: 25px; }
+  .church-banner .container { max-width: 60%; }
+  .bishopimg-container1 { width: 45%; }
+  .theme-banner { height: 400px; }
+  .page-content-container { padding: 25px 30px; }
+  .contact-container { gap: 30px; }
 }
 
 /* Tablets (<= 768px) */
 @media screen and (max-width: 768px) {
-  header { flex-direction: column; align-items: center; padding: 15px; }
-  .menu_left-section { margin-bottom: 15px; text-align: center; }
-  .menu ul { justify-content: center; }
-  .menu ul li { margin: 0 5px 10px 5px; }
+  header { flex-direction: column; align-items: center; padding: 15px; }
+  .menu_left-section { margin-bottom: 15px; text-align: center; }
+  .menu ul { justify-content: center; }
+  .menu ul li { margin: 0 5px 10px 5px; }
 
-  .church-banner {
-      height: auto; min-height: unset; padding: 40px 20px 20px 20px; flex-direction: column;
-      align-items: center; text-align: center;
-  }
-  .church-banner .container { max-width: 90%; margin-bottom: 20px; background: rgba(0,0,0, 0.7); text-align: center; }
-   .church-banner .container h2, .church-banner .container p { text-align: center; }
-  .bishopimg-container1 { position: relative; width: 70%; max-width: 350px; margin: 0 auto; right: auto; bottom: auto; }
-  .theme-banner { height: 300px; }
-  .container { width: 95%; padding: 20px; }
-  .page-content-area { padding: 30px 15px; background-attachment: scroll; }
-  .page-content-container { padding: 20px; width: 95%; }
-  .page-content-container h2 { font-size: 1.8rem; }
-  .branch-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-  .branch-item h3 { font-size: 1.1rem; }
-  .contact-container { grid-template-columns: 1fr; gap: 30px; }
-  .media-content { flex-direction: column; } /* Stack media links/image */
-  .media-image-container { margin-bottom: 30px; flex-basis: auto; width: 80%; max-width: 400px; }
-  .row.primary { padding: 1em 0.5em; }
-  .column { padding: 0 0.5em; }
-  .column h3 { font-size: 1.1rem; }
+  .church-banner {
+      height: auto; min-height: unset; padding: 40px 20px 20px 20px; flex-direction: column;
+      align-items: center; text-align: center;
+  }
+  .church-banner .container { max-width: 90%; margin-bottom: 20px; background: rgba(0,0,0, 0.7); text-align: center; }
+   .church-banner .container h2, .church-banner .container p { text-align: center; }
+  .bishopimg-container1 { position: relative; width: 70%; max-width: 350px; margin: 0 auto; right: auto; bottom: auto; }
+  .theme-banner { height: 300px; }
+  .container { width: 95%; padding: 20px; }
+  .page-content-area { padding: 30px 15px; background-attachment: scroll; }
+  .page-content-container { padding: 20px; width: 95%; }
+  .page-content-container h2 { font-size: 1.8rem; }
+  .branch-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+  .branch-item h3 { font-size: 1.1rem; }
+  .contact-container { grid-template-columns: 1fr; gap: 30px; }
+  .media-content { flex-direction: column; } /* Stack media links/image */
+  .media-image-container { margin-bottom: 30px; flex-basis: auto; width: 80%; max-width: 400px; }
+  .row.primary { padding: 1em 0.5em; }
+  .column { padding: 0 0.5em; }
+  .column h3 { font-size: 1.1rem; }
 }
 
 /* Mobile Phones (<= 480px) */
 @media screen and (max-width: 480px) {
-  body { font-size: 15px; }
-  header { padding: 10px 15px; }
-  header img.logo { height: 40px; margin-right: 10px; }
-  header h1 { font-size: 1.4rem; }
-  .menu ul li a { font-size: 0.9rem; padding: 8px 8px; }
+  body { font-size: 15px; }
+  header { padding: 10px 15px; }
+  header img.logo { height: 40px; margin-right: 10px; }
+  header h1 { font-size: 1.4rem; }
+  .menu ul li a { font-size: 0.9rem; padding: 8px 8px; }
 
-  .church-banner { padding: 30px 15px 15px 15px; }
-  .church-banner .container { max-width: 95%; padding: 20px 15px; }
-  .church-banner .container h2 { font-size: 1.6rem; }
-  .church-banner .container p { font-size: 0.95rem; }
-  .bishopimg-container1 { width: 80%; max-width: 280px; }
-  .theme-banner { height: 200px; }
-  .container { padding: 15px; }
-  .page-content-area { padding: 20px 10px; }
-  .page-content-container { padding: 15px; }
-  .page-content-container h2 { font-size: 1.5rem; margin-bottom: 20px; }
-  .branch-grid { grid-template-columns: 1fr; gap: 15px; } /* Single column */
-  .branch-item { padding: 15px; }
-  .branch-item h3 { font-size: 1.05rem; }
-  .music-link-item { width: 90%; margin-left: auto; margin-right: auto; } /* Full width on mobile */
-  .contact-details, .contact-form-section { padding: 20px; }
-  .contact-details h3, .contact-form-section h3 { font-size: 1.3rem; }
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
-  .contact-form textarea { padding: 10px; }
-  .contact-form button { font-size: 1rem; padding: 10px 20px;}
-  .media-links-list a { font-size: 1rem; padding: 6px 10px; }
-  .media-links-list i { font-size: 1.5rem; margin-right: 10px; }
-  .row.primary { gap: 20px; }
-  .social a { font-size: 24px; }
-  .copyright { font-size: 0.8rem; }
+  .church-banner { padding: 30px 15px 15px 15px; }
+  .church-banner .container { max-width: 95%; padding: 20px 15px; }
+  .church-banner .container h2 { font-size: 1.6rem; }
+  .church-banner .container p { font-size: 0.95rem; }
+  .bishopimg-container1 { width: 80%; max-width: 280px; }
+  .theme-banner { height: 200px; }
+  .container { padding: 15px; }
+  .page-content-area { padding: 20px 10px; }
+  .page-content-container { padding: 15px; }
+  .page-content-container h2 { font-size: 1.5rem; margin-bottom: 20px; }
+  .branch-grid { grid-template-columns: 1fr; gap: 15px; } /* Single column */
+  .branch-item { padding: 15px; }
+  .branch-item h3 { font-size: 1.05rem; }
+  .music-link-item { width: 90%; margin-left: auto; margin-right: auto; } /* Full width on mobile */
+  .contact-details, .contact-form-section { padding: 20px; }
+  .contact-details h3, .contact-form-section h3 { font-size: 1.3rem; }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea { padding: 10px; }
+  .contact-form button { font-size: 1rem; padding: 10px 20px;}
+  .media-links-list a { font-size: 1rem; padding: 6px 10px; }
+  .media-links-list i { font-size: 1.5rem; margin-right: 10px; }
+  .row.primary { gap: 20px; }
+  .social a { font-size: 24px; }
+  .copyright { font-size: 0.8rem; }
 }
