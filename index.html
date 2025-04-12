@@ -19,6 +19,43 @@
     opacity: 0; /* Start with opacity 0 for fade effect */
     transition: opacity 0.5s ease-in-out;
   }
+
+  .slideshow-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 3; /* Ensure controls are above the canvas */
+  }
+
+  .slide-arrow {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    font-size: 1.2rem;
+  }
+
+  .slide-arrow:hover {
+    opacity: 1;
+  }
+
+  .slide-arrow.prev {
+    left: 10px;
+  }
+
+  .slide-arrow.next {
+    right: 10px;
+  }
 </style>
 </head>
 <body>
@@ -51,8 +88,12 @@
         <span>'Go ye into all the world, and preach the gospel to every creature.' – Mark 16:15</span>
       </p>
     </div>
-    <div class="bishopimg-container1">
+    <div class="bishopimg-container1" style="position: relative;">
       <canvas id="bishopSlideshowCanvas"></canvas>
+      <div class="slideshow-controls">
+        <button class="slide-arrow prev" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="slide-arrow next" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+      </div>
     </div>
   </div>
 
@@ -136,6 +177,7 @@
 
     let currentImageIndex = 0;
     const images = [];
+    let slideshowInterval; // Variable to hold the interval
 
     // Preload images
     function preloadImages() {
@@ -149,7 +191,7 @@
                 if (index === 0 && images[0]) {
                     bishopCanvas.width = images[0].naturalWidth;
                     bishopCanvas.height = images[0].naturalHeight;
-                    changeBishopImage();
+                    startSlideshow();
                     bishopCanvas.style.opacity = 1; // Fade in the canvas
                 }
             };
@@ -166,8 +208,19 @@
         }
     }
 
-    function changeBishopImage() {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
+    function startSlideshow() {
+        if (images.length > 1 && !slideshowInterval) {
+            slideshowInterval = setInterval(() => {
+                changeSlide(1); // Automatically advance to the next slide
+            }, 5000);
+        } else if (images[0]) {
+            drawImageOnCanvas(); // Draw the single image if only one
+            bishopCanvas.style.opacity = 1;
+        }
+    }
+
+    function changeSlide(direction) {
+        currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
         bishopCanvas.style.opacity = 0; // Start fade out
         setTimeout(() => {
             drawImageOnCanvas();
@@ -175,18 +228,33 @@
         }, 500); // Match CSS transition duration
     }
 
-    // Start preloading images
-    preloadImages();
+    // Stop automatic slideshow when manually navigating
+    function stopSlideshow() {
+        clearInterval(slideshowInterval);
+        slideshowInterval = null;
+    }
 
-    // Set interval to change image (start only after the first image is loaded)
-    setTimeout(() => {
-        if (images.length > 1 && images[0]) {
-            setInterval(changeBishopImage, 5000);
-        } else if (images[0]) {
-            drawImageOnCanvas(); // Draw the single image if only one
-            bishopCanvas.style.opacity = 1;
+    // Event listeners for arrow clicks
+    document.addEventListener('DOMContentLoaded', () => {
+        const prevButton = document.querySelector('.slide-arrow.prev');
+        const nextButton = document.querySelector('.slide-arrow.next');
+
+        if (prevButton) {
+            prevButton.addEventListener('click', () => {
+                stopSlideshow();
+                changeSlide(-1);
+            });
         }
-    }, 500); // Small delay to ensure first image might be loaded
+
+        if (nextButton) {
+            nextButton.addEventListener('click', () => {
+                stopSlideshow();
+                changeSlide(1);
+            });
+        }
+
+        preloadImages(); // Start preloading images after buttons are set up
+    });
 </script>
 
 </body>
