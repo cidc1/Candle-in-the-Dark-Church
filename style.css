@@ -125,22 +125,89 @@ header h1 {
 
 /* Bishop Image Container */
 .bishopimg-container1 {
-  position: absolute;
+  position: absolute; /* Keep existing absolute positioning */
   bottom: 0;
   right: 0;
   width: 48%; /* Adjusted width */
   max-width: 550px; /* Max size */
   z-index: 1; /* Below text container if overlapping slightly */
   line-height: 0; /* Prevent extra space below image */
+  /* == ADDED for controls == */
+  overflow: hidden; /* Hide controls overflowing if needed */
+  /* position: relative; <- Not needed as it's already absolute */
 }
-.bishopimg1 {
+
+/* == MODIFIED .bishopimg1 to target ID used by JS for transition == */
+/* Or you could keep targeting .bishopimg1 if JS targeted that class instead */
+#bishopSlideshowImage { /* Target the image by ID */
   width: 100%;
   height: auto;
   display: block; /* Remove potential inline spacing */
-  /* --- Style for Slideshow Transition --- */
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  opacity: 1; /* Start visible */
+  transition: opacity 0.5s ease-in-out; /* Ensure transition exists */
 }
+
+/* == ADDED: Styles for Slideshow Controls == */
+.slide-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10; /* Above image */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  line-height: 0;
+}
+.slide-nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.slide-nav-button.prev {
+  left: 10px; /* Position from left edge of container */
+}
+.slide-nav-button.next {
+  right: 10px; /* Position from right edge of container */
+}
+ .slide-nav-button i {
+   pointer-events: none; /* Ensure icon doesn't block button click */
+ }
+
+.slide-indicators {
+  position: absolute;
+  bottom: 15px; /* Position from bottom edge of container */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10; /* Above image */
+  display: flex;
+  gap: 6px; /* Space between dots */
+}
+.slide-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.slide-dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.slide-dot.active {
+  background-color: #ffffff;
+   box-shadow: 0 0 3px rgba(0,0,0,0.4);
+}
+/* == END OF ADDED Controls Styles == */
+
 
 /* Theme Banner */
 .theme-banner {
@@ -377,7 +444,36 @@ ul.footer-links li a:hover { color: #fff; text-decoration: underline; }
   }
   .church-banner .container { max-width: 90%; margin-bottom: 20px; background: rgba(0,0,0, 0.7); text-align: center; }
    .church-banner .container h2, .church-banner .container p { text-align: center; }
-  .bishopimg-container1 { position: relative; width: 70%; max-width: 350px; margin: 0 auto; right: auto; bottom: auto; }
+
+   /* == MODIFIED responsive .bishopimg-container1 == */
+  .bishopimg-container1 {
+      position: relative; /* Changed from absolute for stacking */
+      width: 80%; /* Adjusted width for tablet */
+      max-width: 400px; /* Max width */
+      margin: 20px auto 0 auto; /* Center and add margin */
+      right: auto; /* Reset absolute positioning */
+      bottom: auto; /* Reset absolute positioning */
+      z-index: 1; /* Keep z-index if needed */
+      line-height: 0;
+      overflow: hidden; /* Ensure overflow hidden */
+  }
+
+  /* == ADDED: Responsive Controls (Tablet) == */
+  .slide-nav-button {
+       font-size: 1rem;
+       width: 35px;
+       height: 35px;
+  }
+   .slide-indicators {
+     bottom: 10px; /* Closer to bottom */
+   }
+   .slide-dot {
+      width: 8px;
+      height: 8px;
+   }
+   /* == END OF ADDED Tablet Controls Styles == */
+
+
   .theme-banner { height: 300px; }
   .container { width: 95%; padding: 20px; }
   .page-content-area { padding: 30px 15px; background-attachment: scroll; }
@@ -405,7 +501,35 @@ ul.footer-links li a:hover { color: #fff; text-decoration: underline; }
   .church-banner .container { max-width: 95%; padding: 20px 15px; }
   .church-banner .container h2 { font-size: 1.6rem; }
   .church-banner .container p { font-size: 0.95rem; }
-  .bishopimg-container1 { width: 80%; max-width: 280px; }
+
+  /* == MODIFIED responsive .bishopimg-container1 (Mobile) == */
+  .bishopimg-container1 {
+      width: 90%; /* Wider on small mobile */
+      max-width: none; /* Remove max-width if needed */
+      margin-top: 15px; /* Adjust margin */
+  }
+
+  /* == ADDED: Responsive Controls (Mobile) == */
+  .slide-nav-button {
+       font-size: 0.9rem;
+       width: 30px;
+       height: 30px;
+       left: 5px; /* Closer to edge */
+  }
+  .slide-nav-button.next {
+    right: 5px; /* Closer to edge */
+  }
+  .slide-indicators {
+    bottom: 8px; /* Adjust slightly */
+    gap: 4px; /* Closer dots */
+  }
+   .slide-dot {
+      width: 7px;
+      height: 7px;
+   }
+   /* == END OF ADDED Mobile Controls Styles == */
+
+
   .theme-banner { height: 200px; }
   .container { padding: 15px; }
   .page-content-area { padding: 20px 10px; }
