@@ -111,31 +111,40 @@
     const indicatorsContainer = document.getElementById('slideIndicators');
 
     // --- Image Data (Ensure these paths are correct!) ---
-    const bishopImages = [
+       const bishopImages = [
         'images/Bishopimg2a.png', // Index 0
         'images/Bishopimg3.png',  // Index 1
         'images/Bishopimg4.png',  // Index 2
         'images/Bishopimg5.jpg',  // Index 3
-        'images/Bishopimg6.jpg',  // Index 4
+        'images/Bishopimg6.jpg', // Index 4  <-- CHECK THIS!
         'images/Bishopimg7.png',  // Index 5
         'images/Bishopimg8.jpg',  // Index 6
         'images/Bishopimg9.jpg',  // Index 7
         'images/Bishopimg10.jpg', // Index 8
         'images/Bishopimg11.jpg', // Index 9
+        'images/Bishopimg12.jpg', // Index 10 <-- CHECK THIS!
+        'images/Bishopimg13.jpg', // Index 11 <-- CHECK THIS!
+        'images/Bishopimg14.jpg', // Index 12 <-- CHECK THIS (Duplicate)!
+        'images/service.jpg',     // Index 13 <-- CHECK THIS!
+        'images/concert.jpg'      // Index 14 <-- CHECK THIS!
     ];
-    // Ensure this array has the EXACT same number of items as bishopImages
+    // !!! ENSURE THIS ARRAY HAS THE SAME NUMBER OF ITEMS AS bishopImages !!!
     const bishopAltTexts = [
-        'Bishop Dag Heward-Mills leading the Candle in the Dark Church',
-        'Evangelist Dag Heward-Mills speaking',
-        'Candle in the Dark Church special event',
-        'Candle in the Dark Church worship service',
-        'Candle in the Dark Church congregation',
-        'Candle in the Dark Church gathering',
-        'Candle in the Dark Church members',
-        'Candle in the Dark Church meeting',
-        'Candle in the Dark Church service',
-        'Candle in the Dark Church attendees',
-        'Candle in the Dark Church community' // Alt for the duplicate bishopimg5.jpg
+        'Bishop Dag Heward-Mills leading the Candle in the Dark Church', // 0
+        'Evangelist Dag Heward-Mills speaking', // 1
+        'Candle in the Dark Church special event', // 2
+        'Candle in the Dark Church worship service', // 3
+        'Candle in the Dark Church congregation', // 4
+        'Candle in the Dark Church gathering', // 5
+        'Candle in the Dark Church members', // 6
+        'Candle in the Dark Church meeting', // 7
+        'Candle in the Dark Church service', // 8
+        'Candle in the Dark Church attendees', // 9
+        'Candle in the Dark Church community', // 10
+        'Candle in the Dark Church members', // 11
+        'Candle in the Dark Church prayer camp', // 12
+        'Candle in the Dark Church bishop Immanuel preaching', // 13 (Typo: Immanuel)
+        'Candle in the Dark Church concert' // 14
     ];
 
     // --- State Variables ---
