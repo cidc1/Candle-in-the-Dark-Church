@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang='en'>
 <head>
@@ -41,18 +40,14 @@
       </p>
     </div>
 
-    <div class="bishopimg-container1"> <img src="images/bishopimg2a.png" alt="Bishop Immanuel Obeng leading the Candle in the Dark Church" class="bishopimg1" id="bishopSlideshowImage">
-
-      <button type="button" class="slide-nav-button prev" id="prevSlide" aria-label="Previous Slide">
-        <i class="fas fa-chevron-left"></i>
+    <div class="bishopimg-container1"> <img src="" alt="Loading Slideshow..." class="bishopimg1" id="bishopSlideshowImage"> <button type="button" class="slide-nav-button prev" id="prevSlide" aria-label="Previous Slide" style="display: none;"> <i class="fas fa-chevron-left"></i>
       </button>
-      <button type="button" class="slide-nav-button next" id="nextSlide" aria-label="Next Slide">
-        <i class="fas fa-chevron-right"></i>
+      <button type="button" class="slide-nav-button next" id="nextSlide" aria-label="Next Slide" style="display: none;"> <i class="fas fa-chevron-right"></i>
       </button>
 
       <div class="slide-indicators" id="slideIndicators">
         </div>
-      </div>
+    </div>
   </div>
 
   <div class='theme-banner'>
@@ -110,167 +105,149 @@
     const nextButton = document.getElementById('nextSlide');
     const indicatorsContainer = document.getElementById('slideIndicators');
 
-    // --- Image Data (Ensure these paths are correct!) ---
-       const bishopImages = [
-        'images/Bishopimg2a.png', // Index 0
-        'images/Bishopimg3.png',  // Index 1
-        'images/Bishopimg4.png',  // Index 2
-        'images/Bishopimg5.jpg',  // Index 3
-        'images/Bishopimg6.jpg', // Index 4  <-- CHECK THIS!
-        'images/Bishopimg7.png',  // Index 5
-        'images/Bishopimg8.jpg',  // Index 6
-        'images/Bishopimg9.jpg',  // Index 7
-        'images/Bishopimg10.jpg', // Index 8
-        'images/Bishopimg11.jpg', // Index 9
-        'images/Bishopimg12.jpg', // Index 10 <-- CHECK THIS!
-        'images/Bishopimg13.jpg', // Index 11 <-- CHECK THIS!
-        'images/Bishopimg14.jpg', // Index 12 <-- CHECK THIS (Duplicate)!
-        'images/service.jpg',     // Index 13 <-- CHECK THIS!
-        'images/concert.jpg'      // Index 14 <-- CHECK THIS!
-    ];
-    // !!! ENSURE THIS ARRAY HAS THE SAME NUMBER OF ITEMS AS bishopImages !!!
-    const bishopAltTexts = [
-        'Bishop Dag Heward-Mills leading the Candle in the Dark Church', // 0
-        'Evangelist Dag Heward-Mills speaking', // 1
-        'Candle in the Dark Church special event', // 2
-        'Candle in the Dark Church worship service', // 3
-        'Candle in the Dark Church congregation', // 4
-        'Candle in the Dark Church gathering', // 5
-        'Candle in the Dark Church members', // 6
-        'Candle in the Dark Church meeting', // 7
-        'Candle in the Dark Church service', // 8
-        'Candle in the Dark Church attendees', // 9
-        'Candle in the Dark Church community', // 10
-        'Candle in the Dark Church members', // 11
-        'Candle in the Dark Church prayer camp', // 12
-        'Candle in the Dark Church bishop Immanuel preaching', // 13 (Typo: Immanuel)
-        'Candle in the Dark Church concert' // 14
-    ];
+    // --- Image Data (Will be loaded from JSON) ---
+    let bishopImages = []; // Start empty
+    // NOTE: Alt texts are harder to manage automatically this way.
+    // You might create default ones or fetch another JSON file for them.
+    // For simplicity here, we'll generate basic alt text.
+    let bishopAltTexts = [];
 
     // --- State Variables ---
     let currentImageIndex = 0;
-    let slideInterval; // To hold the interval timer
-    // Use the duration from your CSS (0.5s = 500ms)
+    let slideInterval;
     const FADE_DURATION = 500;
-    const SLIDE_INTERVAL_DELAY = 5000; // Time between automatic slide changes
+    const SLIDE_INTERVAL_DELAY = 5000;
 
     // --- Functions ---
-
-    // Function to update the image and active dot
-    function updateSlide(index) {
-        if (!bishopImageElement || bishopImages.length === 0) return;
-
-        // Calculate the new index, wrapping around the array
-        currentImageIndex = (index + bishopImages.length) % bishopImages.length;
-
-        // Start fade out
-        bishopImageElement.style.opacity = 0;
-
-        // Wait for fade out (or half of it), then change content and fade in
-        setTimeout(() => {
-            if (bishopImageElement) {
-                bishopImageElement.src = bishopImages[currentImageIndex];
-                bishopImageElement.alt = bishopAltTexts[currentImageIndex];
-                bishopImageElement.style.opacity = 1; // Fade in
-            }
-            updateDots(); // Update active dot indicator
-        }, FADE_DURATION / 2); // Change src halfway through fade
+    function generateAltText(filename) {
+        // Basic alt text generation - improve as needed
+        let namePart = filename.split('.')[0]; // Get name before extension
+        namePart = namePart.replace(/_/g, ' ').replace(/-/g, ' '); // Replace underscores/hyphens
+        // Capitalize first letter of each word (simple version)
+        namePart = namePart.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        return `Candle in the Dark Church - ${namePart}`;
     }
 
-    // Function to update which dot is active
+    function updateSlide(index) {
+        if (!bishopImageElement || bishopImages.length === 0) return;
+        currentImageIndex = (index + bishopImages.length) % bishopImages.length;
+        bishopImageElement.style.opacity = 0;
+        setTimeout(() => {
+            if (bishopImageElement && bishopImages.length > currentImageIndex && bishopAltTexts.length > currentImageIndex) {
+                // Prepend the 'images/' path here
+                bishopImageElement.src = 'images/' + bishopImages[currentImageIndex];
+                bishopImageElement.alt = bishopAltTexts[currentImageIndex];
+                bishopImageElement.style.opacity = 1;
+            } else {
+                 console.error(`Error updating slide: Index ${currentImageIndex} out of bounds or element missing.`);
+            }
+            updateDots();
+        }, FADE_DURATION / 2);
+    }
+
     function updateDots() {
         if (!indicatorsContainer) return;
         const dots = indicatorsContainer.children;
         for (let i = 0; i < dots.length; i++) {
-            if(dots[i]) { // Check if dot element exists
+            if(dots[i]) {
                 dots[i].classList.toggle('active', i === currentImageIndex);
             }
         }
     }
 
-    // Function to go to the next slide
-    function nextSlide() {
-        updateSlide(currentImageIndex + 1);
-    }
+    function nextSlide() { updateSlide(currentImageIndex + 1); }
+    function prevSlide() { updateSlide(currentImageIndex - 1); }
 
-    // Function to go to the previous slide
-    function prevSlide() {
-        updateSlide(currentImageIndex - 1);
-    }
-
-    // Function to start/restart the automatic slideshow timer
     function startSlideShow() {
-        clearInterval(slideInterval); // Clear existing interval
-        if (bishopImages.length > 1) { // Only start if multiple images
+        clearInterval(slideInterval);
+        if (bishopImages.length > 1) {
             slideInterval = setInterval(nextSlide, SLIDE_INTERVAL_DELAY);
         }
     }
 
     // --- Initialization ---
-    function initSlideshow() {
-        // Check if essential elements exist
-        if (!bishopImageElement || !prevButton || !nextButton || !indicatorsContainer || bishopImages.length === 0) {
-            console.error("Slideshow elements not found or no images provided. Slideshow disabled.");
-            if(prevButton) prevButton.style.display = 'none';
-            if(nextButton) nextButton.style.display = 'none';
-            if(indicatorsContainer) indicatorsContainer.style.display = 'none';
-            return;
+    async function initSlideshow() { // Make async to use await for fetch
+        if (!bishopImageElement || !prevButton || !nextButton || !indicatorsContainer) {
+             console.error("Slideshow init failed: Core HTML elements missing.");
+             return;
         }
 
-        // Add error handler for images
-        bishopImageElement.onerror = function() {
-            console.error(`ERROR: Image failed to load: ${this.src}. Check path/filename.`);
-        };
+        try {
+            // == FETCH THE IMAGE LIST ==
+            // Adjust path if imageList.json is not in the root directory
+            const response = await fetch('imageList.json'); // Or e.g., 'images/imageList.json'
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const imageFilenames = await response.json();
 
-        // Create indicator dots if more than one image
-        if (bishopImages.length > 1) {
-            indicatorsContainer.innerHTML = ''; // Clear any existing dots
-            bishopImages.forEach((_, index) => {
-                const dot = document.createElement('span');
-                dot.classList.add('slide-dot');
-                dot.setAttribute('role', 'button');
-                dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
-                dot.addEventListener('click', () => {
-                    if (index !== currentImageIndex) {
-                         updateSlide(index);
-                         startSlideShow(); // Restart timer
-                    }
+            if (!Array.isArray(imageFilenames) || imageFilenames.length === 0) {
+                 throw new Error("imageList.json is empty or not a valid array.");
+            }
+
+            bishopImages = imageFilenames; // Assign fetched filenames
+            // Generate basic alt texts (or load another JSON)
+            bishopAltTexts = bishopImages.map(filename => generateAltText(filename));
+
+            // === Now proceed with the rest of the initialization ===
+
+            bishopImageElement.onerror = function() {
+                console.error(`!!! IMAGE LOAD ERROR !!!\nFailed path: ${this.src}\nCheck: File exists in 'images/'? Exact filename (CASE + extension)?`);
+                // Optionally: show placeholder, hide broken image icon
+                this.alt = `Error Loading Image`; // Update alt on error
+            };
+
+            if (bishopImages.length > 1) {
+                 // Show controls now that we have images
+                 prevButton.style.display = 'flex';
+                 nextButton.style.display = 'flex';
+
+                indicatorsContainer.innerHTML = ''; // Clear dots
+                bishopImages.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('slide-dot');
+                    dot.setAttribute('role', 'button');
+                    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+                    dot.addEventListener('click', () => {
+                        if (index !== currentImageIndex) {
+                             updateSlide(index);
+                             startSlideShow();
+                        }
+                    });
+                    indicatorsContainer.appendChild(dot);
                 });
-                indicatorsContainer.appendChild(dot);
-            });
 
-            // Add button listeners
-            prevButton.addEventListener('click', () => {
-                prevSlide();
-                startSlideShow(); // Restart timer
-            });
-            nextButton.addEventListener('click', () => {
-                nextSlide();
-                startSlideShow(); // Restart timer
-            });
+                prevButton.addEventListener('click', () => { prevSlide(); startSlideShow(); });
+                nextButton.addEventListener('click', () => { nextSlide(); startSlideShow(); });
 
-            // Start automatic slideshow
-            startSlideShow();
+                startSlideShow();
+            } else {
+                // Only one image, hide controls (already hidden by default)
+                indicatorsContainer.style.display = 'none'; // Ensure dots are hidden
+            }
 
-        } else {
-            // Only one image, hide controls
+            // Set initial state ONLY after loading JSON
+            if(bishopImages.length > 0) {
+                updateSlide(0); // Load the first image
+            } else {
+                 bishopImageElement.alt = "No images found for slideshow."; // Show message if list is empty
+            }
+
+
+        } catch (error) {
+            console.error("Could not initialize slideshow:", error);
+            // Hide controls and show an error message
+            bishopImageElement.alt = "Error loading slideshow images.";
             prevButton.style.display = 'none';
             nextButton.style.display = 'none';
             indicatorsContainer.style.display = 'none';
         }
-
-        // Set initial state (first image and dot)
-        // Use the index already set (0)
-        bishopImageElement.src = bishopImages[currentImageIndex];
-        bishopImageElement.alt = bishopAltTexts[currentImageIndex];
-        bishopImageElement.style.opacity = 1; // Ensure initial image is visible
-        updateDots(); // Set the first dot active
-
     }
 
     // --- Run Initialization ---
     document.addEventListener('DOMContentLoaded', initSlideshow);
 
 </script>
+
 </body>
 </html>
